@@ -1,0 +1,3911 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>مترجم لغة الإشارة</title>
+
+<!-- PWA: manifest + أيقونات + إعدادات التثبيت -->
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogItmF2KrYsdis2YUg2YTYutipINin2YTYpdi02KfYsdipIiwKICAic2hvcnRfbmFtZSI6ICLZhdiq2LHYrNmFINin2YTYpdi02KfYsdipIiwKICAiZGVzY3JpcHRpb24iOiAi2KrYsdis2YXYqSDZgdmI2LHZitipINmE2K3YsdmD2KfYqiDYp9mE2YrYryDYpdmE2Ykg2YbYtSDZiNi12YjYqiDYqNin2LPYqtiu2K/Yp9mFINin2YTZg9in2YXZitix2KfYjCDYqti52YXZhCDYqNin2YTZg9in2YXZhCDYr9in2K7ZhCDYp9mE2YXYqti12YHYrS4iLAogICJzdGFydF91cmwiOiAiLi9pbmRleC5odG1sIiwKICAic2NvcGUiOiAiLi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzA5MGQxMiIsCiAgInRoZW1lX2NvbG9yIjogIiMwOTBkMTIiLAogICJkaXIiOiAicnRsIiwKICAibGFuZyI6ICJhciIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImh0dHBzOi8vZmlsZXMuY2F0Ym94Lm1vZS94NXgxYTcucG5nIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLAogICAgICAicHVycG9zZSI6ICJhbnkiCiAgICB9LAogICAgewogICAgICAic3JjIjogImh0dHBzOi8vZmlsZXMuY2F0Ym94Lm1vZS94NXgxYTcucG5nIiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLAogICAgICAicHVycG9zZSI6ICJhbnkiCiAgICB9LAogICAgewogICAgICAic3JjIjogImh0dHBzOi8vZmlsZXMuY2F0Ym94Lm1vZS94NXgxYTcucG5nIiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLAogICAgICAicHVycG9zZSI6ICJtYXNrYWJsZSIKICAgIH0KICBdCn0K">
+<meta name="theme-color" content="#090d12">
+<meta name="background-color" content="#090d12">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="مترجم الإشارة">
+<link rel="icon" type="image/png" href="https://files.catbox.moe/x5x1a7.png">
+<link rel="apple-touch-icon" href="https://files.catbox.moe/x5x1a7.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #090d12;
+    --bg-soft: #0d1319;
+    --surface: #121a22;
+    --surface-2: #182430;
+    --border: #223040;
+    --border-soft: #1a2530;
+    --text: #eaf1f6;
+    --text-muted: #7f909e;
+    --teal: #2dd4bf;
+    --teal-dim: rgba(45, 212, 191, 0.14);
+    --amber: #f2b544;
+    --amber-dim: rgba(242, 181, 68, 0.14);
+    --green: #4ade80;
+    --danger: #e2665a;
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 9px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Tajawal", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body{
+    min-height: 100vh;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(45,212,191,0.08), transparent 60%),
+      var(--bg);
+  }
+
+  .shell{
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 22px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(155deg, var(--teal), #16897a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px -6px rgba(45,212,191,0.55);
+  }
+  .logo-mark svg{ width: 24px; height: 24px; }
+
+  header h1{
+    font-size: 1.28rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+  header p{
+    margin: 2px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  /* ---------- Camera card ---------- */
+  .camera-card{
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 20px 40px -24px rgba(0,0,0,0.7);
+  }
+
+  .video-wrap{
+    position: absolute;
+    inset: 0;
+    transform: scaleX(-1); /* natural mirror view like a selfie */
+  }
+
+  .video-wrap video, canvas.overlay{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  video{ background: #000; }
+
+  .camera-card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: var(--radius-lg);
+    box-shadow: inset 0 0 0 1px rgba(45,212,191,0.18);
+  }
+
+  .cam-topbar{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+  }
+
+  .status-pill{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(9,13,18,0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .status-dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+  }
+  .status-dot.on{
+    background: var(--teal);
+    box-shadow: 0 0 10px 1px rgba(45,212,191,0.7);
+  }
+  .status-dot.warn{
+    background: var(--amber);
+    box-shadow: 0 0 10px 1px rgba(242,181,68,0.7);
+  }
+
+  .hand-count{
+    background: rgba(9,13,18,0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .camera-placeholder{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    z-index: 3;
+  }
+  .camera-placeholder.hidden{ display: none; }
+
+  .camera-placeholder svg{ width: 46px; height: 46px; opacity: 0.55; }
+  .camera-placeholder strong{ color: var(--text); font-size: 0.95rem; }
+  .camera-placeholder span{ font-size: 0.8rem; line-height: 1.6; }
+
+  .start-btn{
+    margin-top: 6px;
+    border: none;
+    background: var(--teal);
+    color: #06201c;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .start-btn:active{ transform: scale(0.97); }
+
+  /* ---------- Translation box ---------- */
+  .translation-card{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    padding: 22px 18px 18px;
+    text-align: center;
+    position: relative;
+  }
+
+  .translation-label{
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .live-dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 6px 1px rgba(45,212,191,0.8);
+    animation: pulse 1.1s infinite ease-in-out;
+  }
+  @keyframes pulse{
+    0%, 100%{ opacity: 0.4; transform: scale(0.85); }
+    50%{ opacity: 1; transform: scale(1.15); }
+  }
+
+  .translation-display{
+    font-family: "Almarai", "Tajawal", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+    line-height: 1.15;
+    color: var(--amber);
+    min-height: 1.3em;
+    word-break: break-word;
+    transition: opacity 0.1s ease, transform 0.15s ease;
+  }
+  .translation-display.committed{
+    color: var(--green);
+  }
+
+  .hold-track{
+    width: 100%;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--bg-soft);
+    overflow: hidden;
+    margin: 14px 0 8px;
+  }
+  .hold-fill{
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--teal), var(--amber));
+    border-radius: 999px;
+    transition: width 0.06s linear, background 0.2s ease;
+  }
+  .hold-fill.ready{
+    background: var(--green);
+  }
+  .hold-fill.blocked{
+    background: var(--text-muted);
+  }
+
+  .translation-sub{
+    margin-top: 2px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    min-height: 1.2em;
+  }
+
+  /* ---------- Controls ---------- */
+  .controls-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .btn{
+    font-family: inherit;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 0.86rem;
+    font-weight: 700;
+    padding: 13px 10px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  }
+  .btn:active{ transform: scale(0.97); }
+  .btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
+
+  .btn.primary{
+    background: linear-gradient(160deg, var(--teal), #16897a);
+    color: #06201c;
+    border: none;
+    grid-column: 1 / -1;
+    padding: 15px 10px;
+    font-size: 0.95rem;
+  }
+  .btn.primary:disabled{
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn.ghost:hover{ border-color: var(--teal); }
+
+  /* ---------- Sentence builder ---------- */
+  .sentence-card{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    padding: 16px 16px 14px;
+  }
+
+  .sentence-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .sentence-head > span{
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .head-actions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* toggle switch */
+  .switch-wrap{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+  .switch{
+    position: relative;
+    width: 38px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider{
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: background 0.2s ease;
+  }
+  .slider::before{
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    right: 2px;
+    top: 2px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  input:checked + .slider{
+    background: var(--teal-dim);
+    border-color: var(--teal);
+  }
+  input:checked + .slider::before{
+    transform: translateX(-16px);
+    background: var(--teal);
+  }
+
+  .sentence-box{
+    min-height: 54px;
+    background: var(--bg-soft);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    word-break: break-word;
+  }
+  .sentence-box:empty::before{
+    content: "ابدأ الإشارة وستتجمّع الكلمات هنا تلقائياً بشكل متتابع…";
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .word-chip{
+    display: inline-block;
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn{
+    from{ opacity: 0; transform: translateY(3px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .icon-btn{
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+  .icon-btn svg{ width: 15px; height: 15px; }
+  .icon-btn:hover{ color: var(--danger); }
+
+  /* ---------- Firebase status & history ---------- */
+  .fb-status{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 12px 2px 0;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+  }
+  .fb-status .status-dot{ width: 7px; height: 7px; }
+
+  .fb-history{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+  .fb-empty{
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 10px 0;
+  }
+  .fb-item{
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    animation: fadeIn 0.2s ease;
+  }
+  .fb-item-text{
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .fb-item-time{
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ---------- Reference chips ---------- */
+  .ref-card{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+  }
+  .ref-card h2{
+    font-size: 0.82rem;
+    margin: 0 0 12px;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+  .chip-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip{
+    background: var(--surface-2);
+    border: 1px solid var(--border-soft);
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+  }
+  .chip b{ color: var(--text); font-weight: 700; }
+
+  footer{
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    padding-top: 4px;
+  }
+
+  .credit-signature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2px;
+    padding-top: 14px;
+  }
+  .credit-signature .line{
+    flex: 1;
+    max-width: 64px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-soft));
+  }
+  .credit-signature .line.left{ background: linear-gradient(270deg, transparent, var(--border-soft)); }
+  .credit-signature p{
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    background: linear-gradient(120deg, var(--teal), var(--amber));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .credit-signature p span{
+    color: var(--text-muted);
+    font-weight: 500;
+    -webkit-text-fill-color: var(--text-muted);
+  }
+
+  /* ---------- Tab bar ---------- */
+  .tab-bar{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 5px;
+  }
+  .tab-btn{
+    font-family: inherit;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 10px 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s ease, color 0.15s ease;
+    line-height: 1.3;
+  }
+  .tab-btn svg{ width: 18px; height: 18px; }
+  .tab-btn.active{
+    background: var(--teal-dim);
+    color: var(--teal);
+  }
+
+  .view{ display: none; flex-direction: column; gap: 18px; }
+  .view.active{ display: flex; }
+
+  .section-card{
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+  }
+  .section-card h2{
+    font-size: 0.92rem;
+    margin: 0 0 4px;
+    font-weight: 800;
+  }
+  .section-card .section-desc{
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ---------- Flashcards guide ---------- */
+  .cat-scroll{
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    margin-bottom: 14px;
+  }
+  .cat-scroll::-webkit-scrollbar{ display: none; }
+  .cat-pill{
+    flex-shrink: 0;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cat-pill.active{
+    background: var(--teal-dim);
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  .flash-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .flash-card{
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 14px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .flash-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--teal-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+  .flash-icon svg{ width: 20px; height: 20px; }
+  .flash-word{ font-weight: 800; font-size: 0.92rem; }
+  .flash-sub{ font-size: 0.68rem; color: var(--text-muted); line-height: 1.4; }
+
+  /* ---------- Quick favorites ---------- */
+  .fav-add-row{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .fav-add-row input{
+    flex: 1;
+    font-family: inherit;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+  .fav-add-row input:focus{ outline: none; border-color: var(--teal); }
+  .fav-add-row button{
+    flex-shrink: 0;
+    font-family: inherit;
+    border: none;
+    background: var(--teal);
+    color: #06201c;
+    font-weight: 800;
+    padding: 0 18px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+  .fav-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fav-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    padding: 4px 4px 4px 8px;
+  }
+  .fav-tap{
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-align: right;
+    padding: 12px 6px;
+    cursor: pointer;
+  }
+  .fav-remove{
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+  }
+  .fav-remove svg{ width: 16px; height: 16px; }
+  .fav-empty{
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    padding: 20px 0;
+  }
+
+  /* ---------- Emergency big-display overlay ---------- */
+  .big-overlay{
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    gap: 24px;
+  }
+  .big-overlay.active{ display: flex; }
+  .big-overlay-text{
+    font-family: "Almarai", "Tajawal", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 12vw, 4.2rem);
+    color: var(--amber);
+    line-height: 1.25;
+  }
+  .big-overlay-close{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 999px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .big-overlay-speak{
+    border: none;
+    background: var(--teal);
+    color: #06201c;
+    font-family: inherit;
+    font-weight: 800;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ---------- Text to sign ---------- */
+  .t2s-input-row{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .t2s-input-row input{
+    flex: 1;
+    font-family: inherit;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+  .t2s-input-row input:focus{ outline: none; border-color: var(--teal); }
+  .t2s-input-row button{
+    flex-shrink: 0;
+    font-family: inherit;
+    border: none;
+    background: var(--teal);
+    color: #06201c;
+    font-weight: 800;
+    padding: 0 18px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+  .t2s-results{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .t2s-chip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    min-width: 84px;
+  }
+  .t2s-chip.unknown{
+    border-style: dashed;
+    opacity: 0.65;
+  }
+  .t2s-letter-group{
+    min-width: 100%;
+    align-items: stretch;
+    text-align: right;
+  }
+  .t2s-letter-group .t2s-chip-word{ text-align: center; font-size: 0.95rem; }
+  .t2s-letter-group .t2s-chip-sub{ text-align: center; margin-bottom: 6px; }
+  .t2s-letters-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+  .t2s-letter-mini{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 9px;
+    min-width: 30px;
+  }
+  .t2s-letter-mini.unknown{ opacity: 0.5; border-style: dashed; }
+  .t2s-letter-char{ font-weight: 800; font-size: 0.95rem; color: var(--teal); }
+  .t2s-letter-tip{ font-size: 0.58rem; color: var(--text-muted); }
+  .t2s-chip .flash-icon{ width: 32px; height: 32px; }
+  .t2s-chip .flash-icon svg{ width: 16px; height: 16px; }
+  .t2s-chip-word{ font-weight: 700; font-size: 0.82rem; }
+  .t2s-chip-sub{ font-size: 0.62rem; color: var(--text-muted); text-align: center; }
+  .t2s-empty{
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    padding: 16px 0;
+    width: 100%;
+  }
+
+  /* ---------- Dictionary upload ---------- */
+  .dict-upload-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .dict-upload-status{
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  /* ---------- إشارات مخصّصة: وسائط توضيحية + قائمة الإشارات ---------- */
+  .ref-media{
+    display: none;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 36%;
+    max-width: 170px;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .ref-media.show{ display: flex; flex-direction: column; align-items: center; gap: 5px; animation: fadeIn 0.2s ease; }
+  .ref-media-frame{ width: 100%; }
+  .ref-media img, .ref-media video{
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--teal);
+    background: #000;
+    box-shadow: 0 8px 22px -6px rgba(0,0,0,0.7);
+  }
+  .ref-media-cap{
+    font-size: 0.64rem;
+    color: var(--text);
+    background: rgba(9,13,18,0.72);
+    backdrop-filter: blur(6px);
+    padding: 2px 9px;
+    border-radius: 999px;
+  }
+
+  .teach-preview{
+    display: none;
+    width: 100%;
+    max-height: 210px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    background: #000;
+    transform: scaleX(-1);
+    margin-top: 12px;
+  }
+  .teach-box{
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid var(--border-soft);
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+  }
+  .teach-box-title{ margin: 0 0 2px; font-size: 0.82rem; font-weight: 800; }
+  .teach-box-title small{ font-weight: 500; color: var(--text-muted); }
+  .teach-box .dict-upload-row .btn{ padding: 9px 12px; font-size: 0.76rem; }
+  .teach-check{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .teach-check input{ accent-color: var(--teal); }
+  .teach-pending{
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+  }
+  .teach-pending img, .teach-pending video{
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #000;
+    flex-shrink: 0;
+  }
+  .teach-pending span{ flex: 1; font-size: 0.76rem; }
+  .teach-slider-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    direction: ltr;
+  }
+  .teach-slider-row input[type=range]{ flex: 1; accent-color: var(--teal); }
+  .teach-slider-row output{ min-width: 2.8em; text-align: center; color: var(--teal); font-weight: 800; }
+
+  #teachList{ max-height: 420px; }
+  .sign-item{ flex-wrap: wrap; }
+  .sign-thumb{
+    position: relative;
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+  }
+  .sign-thumb:disabled{ cursor: default; }
+  .sign-thumb img, .sign-thumb video{ width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .sign-thumb .play-badge{
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    font-size: 0.6rem;
+    line-height: 1;
+    padding: 3px 4px;
+    border-radius: 6px;
+    background: rgba(9,13,18,0.75);
+    color: var(--teal);
+  }
+  .sign-info{ flex: 1; min-width: 110px; display: flex; flex-direction: column; gap: 2px; }
+  .sign-meta{ font-size: 0.68rem; color: var(--text-muted); }
+  .sign-actions{ display: flex; gap: 4px; flex-wrap: wrap; }
+  .mini-btn{
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 9px;
+    cursor: pointer;
+  }
+  .mini-btn:hover{ border-color: var(--teal); }
+  .mini-btn.danger:hover{ border-color: var(--danger); color: var(--danger); }
+
+  .media-lightbox{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.94);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 14px;
+  }
+  .media-lightbox.active{ display: flex; }
+  .lightbox-body{ max-width: 100%; max-height: 78vh; display: flex; }
+  .lightbox-body img, .lightbox-body video{ max-width: 100%; max-height: 78vh; border-radius: var(--radius-md); background: #000; }
+  .lightbox-title{ font-family: "Almarai", "Tajawal", sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--amber); }
+
+  .flash-media{ width: 100%; max-height: 130px; border-radius: 10px; background: #000; object-fit: contain; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; animation: none !important; }
+  }
+
+  /* ---------- لوحة إضافة الإشارات ---------- */
+  .add-sign-cta{ width:100%; padding:16px; font-size:1.05rem; }
+  .add-sign-cta .cnt{ background:rgba(6,32,28,.2); border-radius:999px; padding:1px 10px; font-size:.8rem; margin-inline-start:8px; }
+  .add-sign-cta .cnt:empty{ display:none; }
+  .sign-modal{ position:fixed; inset:0; background:rgba(0,0,0,.82); z-index:900; display:none; align-items:flex-end; justify-content:center; }
+  .sign-modal.active{ display:flex; }
+  .sign-modal-panel{ width:100%; max-width:640px; max-height:94vh; overflow-y:auto; background:var(--bg-soft); border:1px solid var(--border); border-radius:22px 22px 0 0; padding:14px; display:flex; flex-direction:column; gap:12px; }
+  .sign-modal-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; position:sticky; top:-14px; margin:-14px -14px 0; padding:14px; background:var(--bg-soft); z-index:2; border-bottom:1px solid var(--border-soft); }
+  .sign-modal-head h2{ font-size:1.05rem; margin:0; }
+  .sign-modal-status{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .teach-live{ flex:1; min-width:130px; background:var(--teal-dim); color:var(--teal); border-radius:10px; padding:9px 12px; font-weight:800; text-align:center; }
+  .lang-badge{ display:inline-block; background:var(--amber-dim); color:var(--amber); border-radius:999px; padding:1px 8px; font-size:.72rem; margin-inline-end:6px; }
+  .lang-filter{ width:100%; padding:10px 12px; background:var(--surface-2); color:var(--text); border:1px solid var(--border); border-radius:10px; font-family:inherit; margin-top:14px; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <header>
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V11" stroke="#06201c" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M10 11V5a1.5 1.5 0 0 1 3 0v6" stroke="#06201c" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M13 11V6a1.5 1.5 0 0 1 3 0v6.5" stroke="#06201c" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M16 12.5v-2a1.5 1.5 0 0 1 3 0V15c0 3.5-2.5 6-6.2 6-2 0-3.4-.7-4.6-2.1L4.6 14.7c-.6-.7-.5-1.7.2-2.2.6-.5 1.5-.4 2 .2L8.5 14.7" stroke="#06201c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h1>مترجم لغة الإشارة</h1>
+      <p>ترجمة فورية متدفقة لحركات اليد إلى نص وصوت</p>
+    </div>
+  </header>
+
+  <!-- Tab bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" data-view="view-translate">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8a2 2 0 0 1 2-2h1.2a1 1 0 0 0 .83-.45l.94-1.4A1 1 0 0 1 9.8 3.6h4.4a1 1 0 0 1 .83.45l.94 1.4a1 1 0 0 0 .83.45H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.4"/></svg>
+      الترجمة المباشرة
+    </button>
+    <button class="tab-btn" data-view="view-guide">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.4"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" stroke="currentColor" stroke-width="1.4"/></svg>
+      دليل الإشارات
+    </button>
+    <button class="tab-btn" data-view="view-favorites">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20s-7-4.35-9.5-8.8C.9 8 2.6 4.5 6 4.5c2 0 3.4 1.1 4 2.3.6-1.2 2-2.3 4-2.3 3.4 0 5.1 3.5 3.5 6.7C19 15.65 12 20 12 20Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      المفضلة
+    </button>
+    <button class="tab-btn" data-view="view-t2s">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 15l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      نص ← إشارة
+    </button>
+  </div>
+
+  <!-- ===================== View: الترجمة المباشرة ===================== -->
+  <div class="view active" id="view-translate">
+
+  <!-- Camera -->
+  <div class="camera-card">
+    <div class="video-wrap">
+      <video id="video" playsinline autoplay muted></video>
+      <canvas id="overlay" class="overlay"></canvas>
+    </div>
+
+    <div class="cam-topbar">
+      <div class="status-pill">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">الكاميرا متوقفة</span>
+      </div>
+      <div class="hand-count" id="handCount">0 يد مكتشفة</div>
+    </div>
+
+    <!-- مرجع بصري (صورة/فيديو) للإشارة المتعلَّمة اللي الكاميرا اتعرّفت عليها -->
+    <div class="ref-media" id="refMedia">
+      <div class="ref-media-frame" id="refMediaHolder"></div>
+      <div class="ref-media-cap" id="refMediaCap"></div>
+    </div>
+
+    <div class="camera-placeholder" id="placeholder">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8a2 2 0 0 1 2-2h1.2a1 1 0 0 0 .83-.45l.94-1.4A1 1 0 0 1 9.8 3.6h4.4a1 1 0 0 1 .83.45l.94 1.4a1 1 0 0 0 .83.45H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <strong>ابدأ تشغيل الكاميرا</strong>
+      <span>سيطلب المتصفح إذنك للوصول إلى الكاميرا لتحليل إشارات يدك مباشرة على جهازك.</span>
+      <button class="start-btn" id="startBtn">تشغيل الكاميرا</button>
+    </div>
+  </div>
+
+  <!-- Translation output -->
+  <div class="translation-card">
+    <p class="translation-label"><span class="live-dot" id="liveDot" style="display:none;"></span><span id="liveLabelText">الإشارة المكتشفة الآن</span></p>
+    <div class="translation-display" id="translationDisplay">—</div>
+    <div class="hold-track"><div class="hold-fill" id="holdFill"></div></div>
+    <p class="translation-sub" id="translationSub">وجّه يدك أمام الكاميرا</p>
+  </div>
+
+  <div class="controls-row">
+    <button class="btn ghost" id="speakCurrentBtn">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.6"/></svg>
+      قراءة الإشارة الحالية
+    </button>
+    <button class="btn ghost" id="addToSentenceBtn">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      إضافة يدوياً
+    </button>
+    <button class="btn primary" id="stopBtn" disabled>
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="2" fill="#06201c"/></svg>
+      إيقاف الكاميرا
+    </button>
+  </div>
+
+  <button class="btn primary add-sign-cta" id="openSignModalBtn" type="button">إضافة إشارة جديدة ➕<span class="cnt" id="signCountBadge"></span></button>
+
+  <!-- Sentence builder -->
+  <div class="sentence-card">
+    <div class="sentence-head">
+      <span>الجملة المتدفقة تلقائياً</span>
+      <div class="head-actions">
+        <label class="switch-wrap">
+          <span id="autoModeLabel">تلقائي</span>
+          <span class="switch">
+            <input type="checkbox" id="autoToggle" checked>
+            <span class="slider"></span>
+          </span>
+        </label>
+        <button class="icon-btn" id="clearSentenceBtn">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-8 0 1 12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          مسح
+        </button>
+      </div>
+    </div>
+    <div class="sentence-box" id="sentenceBox"></div>
+    <div class="controls-row" style="margin-top:12px;">
+      <button class="btn ghost" id="speakSentenceBtn">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.6"/></svg>
+        قراءة الجملة
+      </button>
+      <button class="btn ghost" id="saveFirebaseBtn">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 4h11l3 3v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 4v5h8V4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 14h10v6H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        حفظ في Firebase
+      </button>
+    </div>
+    <p class="fb-status" id="fbStatus">
+      <span class="status-dot" id="fbStatusDot"></span>
+      <span id="fbStatusText">جارٍ الاتصال بقاعدة البيانات…</span>
+    </p>
+  </div>
+
+  <!-- Firebase saved history -->
+  <div class="sentence-card">
+    <div class="sentence-head">
+      <span>سجل الجمل المحفوظة (Firestore)</span>
+    </div>
+    <div id="fbHistory" class="fb-history">
+      <p class="fb-empty">لا توجد جمل محفوظة بعد.</p>
+    </div>
+  </div>
+
+  <!-- Reference -->
+  <div class="ref-card">
+    <h2>التصنيفات المدعومة في القاموس</h2>
+    <div class="chip-grid">
+      <span class="chip"><b>الحروف</b></span>
+      <span class="chip"><b>الأرقام</b></span>
+      <span class="chip"><b>الألوان</b></span>
+      <span class="chip"><b>أيام الأسبوع</b></span>
+      <span class="chip"><b>التحيات</b></span>
+      <span class="chip"><b>المجاملات</b></span>
+      <span class="chip"><b>المشاعر</b></span>
+      <span class="chip"><b>الردود</b></span>
+      <span class="chip"><b>الخدمات</b></span>
+      <span class="chip"><b>الصحة</b></span>
+      <span class="chip"><b>الأوامر</b></span>
+      <span class="chip"><b>الاعتذار</b></span>
+      <span class="chip"><b>الأفعال</b></span>
+      <span class="chip"><b>الأماكن</b></span>
+      <span class="chip"><b>الأسئلة</b></span>
+      <span class="chip"><b>الأسرة</b></span>
+      <span class="chip"><b>الصفات</b></span>
+      <span class="chip"><b>الوقت</b></span>
+      <span class="chip"><b>الحيوانات</b></span>
+      <span class="chip"><b>أعضاء الجسم</b></span>
+      <span class="chip"><b>الأكل والشرب</b></span>
+      <span class="chip"><b>الطقس والموقع</b></span>
+    </div>
+  </div>
+
+  </div> <!-- /view-translate -->
+
+  <!-- ===================== View: دليل الإشارات السريع ===================== -->
+  <div class="view" id="view-guide">
+    <div class="section-card">
+      <h2>دليل الإشارات السريع</h2>
+      <p class="section-desc">مرجع مصوّر مصغّر للكلمات والإشارات الشائعة، مقسّمة حسب الفئة — للاستخدام السريع بدون تشغيل الكاميرا.</p>
+      <div class="cat-scroll" id="catScroll"></div>
+      <div class="flash-grid" id="flashGrid"></div>
+    </div>
+
+    <div class="section-card">
+      <h2>توسيع القاموس الشامل</h2>
+      <p class="section-desc">ارفع ملف قاموس بصيغة JSON لإضافة كلمات وفئات جديدة إلى الدليل، أو إشارات يدوية جديدة لمحرّك الترجمة. يُحفظ القاموس المرفوع على جهازك تلقائياً.</p>
+      <div class="dict-upload-row">
+        <button class="btn ghost" id="uploadDictBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16V4m0 0 4 4m-4-4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          رفع ملف القاموس (JSON)
+        </button>
+        <button class="btn ghost" id="resetDictBtn" type="button">إعادة الضبط الافتراضي</button>
+        <input type="file" id="dictFileInput" accept="application/json,.json" style="display:none;">
+      </div>
+      <p class="dict-upload-status" id="dictUploadStatus">القاموس الحالي: افتراضي.</p>
+    </div>
+
+    <div class="section-card">
+      <h2>إشاراتي ولغاتي المخصّصة</h2>
+      <p class="section-desc">سجّل إشارات ولغات جديدة بنفسك، وتابع قائمتك وعدّلها أو احذفها من لوحة الإضافة.</p>
+      <button class="btn primary" id="openSignModalBtn2" type="button">إضافة إشارة جديدة ➕</button>
+    </div>
+
+    <div class="section-card" id="teachCard">
+      <h2>علّم الكاميرا إشارة جديدة 🎓</h2>
+      <p class="section-desc">
+        التطبيق مش مقيّد بعدد معيّن من الإشارات — تقدر تعلّمه <b style="color:var(--text);">أي عدد</b> من الحروف والكلمات والألوان والحيوانات وغيرها. <b style="color:var(--text);">الأرقام من ٠ إلى ١٠ مدعومة تلقائياً</b> (إيد واحدة لـ ٠-٥، وإيدين معاً لـ ٦-١٠ عن طريق عدّ الأصابع). لأي إشارة تانية: اكتب اسمها، وارفق صورة أو فيديو يوضّح شكل اليد الصح (اختياري)، واضغط "التقاط بصمة اليد" وثبّت يدك بعد العدّ التنازلي. كل تسجيل بيضيف "عيّنة" جديدة لنفس الإشارة — وكل ما سجّلت أكتر (بزوايا ومسافات مختلفة) زادت دقة التعرّف. وكل حاجة بتتحفظ على جهازك.
+      </p>
+      <div class="fav-add-row" style="margin-bottom:8px;">
+        <input type="text" id="teachLangInput" list="teachLangList" placeholder="اللغة / التصنيف (مثال: لغة الإشارة العربية، ASL)…" value="لغة الإشارة العربية">
+        <datalist id="teachLangList"></datalist>
+      </div>
+      <div class="fav-add-row">
+        <input type="text" id="teachNameInput" placeholder="اسم الإشارة (مثال: حرف الألف، أحمر، قطة)…">
+        <button class="btn primary" id="teachRecordBtn" type="button">التقاط بصمة اليد</button>
+      </div>
+      <p class="dict-upload-status" id="teachStatus">شغّل الكاميرا من أعلى الصفحة، ثم اكتب اسم الإشارة واضغط "التقاط بصمة اليد".</p>
+      <p class="dict-upload-status" id="signSyncStatus">☁️ المزامنة: جارٍ الاتصال بقاعدة البيانات…</p>
+
+      <!-- معاينة مباشرة للكاميرا داخل قسم التعليم -->
+      <video id="teachPreview" class="teach-preview" autoplay muted playsinline></video>
+
+      <div class="teach-box">
+        <p class="teach-box-title">🖼 صورة أو فيديو توضيحي للإشارة <small>(اختياري — بيظهر كمرجع بصري لما الكاميرا تتعرّف عليها)</small></p>
+        <div class="dict-upload-row">
+          <button class="btn ghost" id="teachAttachBtn" type="button">📎 رفع ملف</button>
+          <button class="btn ghost" id="teachSnapBtn" type="button">📸 لقطة</button>
+          <button class="btn ghost" id="teachVideoBtn" type="button">🎥 فيديو ٣ ث</button>
+          <input type="file" id="teachMediaInput" accept="image/*,video/*" style="display:none;">
+        </div>
+        <div class="teach-pending" id="teachPending"></div>
+        <label class="teach-check">
+          <input type="checkbox" id="autoSnapToggle" checked>
+          لقطة تلقائية من الكاميرا مع كل إشارة جديدة (لو ما جهّزتش وسائط)
+        </label>
+      </div>
+
+      <div class="teach-box">
+        <p class="teach-box-title">حساسية التعرّف: <output id="matchSliderVal">0.85</output> <small>(لو بتتلخبط بين إشارتين قلّلها — لو مش بتتعرّف على إشارتك زوّدها)</small></p>
+        <div class="teach-slider-row">
+          <span>متشدّد</span>
+          <input type="range" id="matchSlider" min="0.4" max="1.4" step="0.05" value="0.85">
+          <span>متساهل</span>
+        </div>
+        <label class="teach-check">
+          <input type="checkbox" id="mirrorToggle" checked>
+          التعرّف على الإشارة بأي يد (يمين أو شمال) — مفيد لما شخص تاني يستخدم التطبيق
+        </label>
+      </div>
+
+      <p class="section-desc" style="margin-top:16px;">
+        <b style="color:var(--text);">مسار سريع للأساسيات:</b> اضغط فئة، وهيملالك اسم كل إشارة تلقائياً بالترتيب — إنت بس تثبّت يدك وتدوس "التقاط بصمة اليد" لكل واحدة، وبعدها "التالي" يجهزلك اللي بعدها.
+      </p>
+      <div class="dict-upload-row">
+        <button class="btn ghost" id="queueLettersBtn" type="button">الحروف (٢٨)</button>
+        <button class="btn ghost" id="queueColorsBtn" type="button">الألوان</button>
+        <button class="btn ghost" id="queueAnimalsBtn" type="button">الحيوانات</button>
+        <button class="btn ghost" id="queuePhrasesBtn" type="button">عبارات شائعة</button>
+      </div>
+      <div class="dict-upload-row" id="queueControlsRow" style="display:none;">
+        <button class="btn ghost" id="queueSkipBtn" type="button">تخطي هذه الإشارة ▷</button>
+        <button class="btn ghost" id="queueStopBtn" type="button">إنهاء المسار</button>
+      </div>
+      <p class="dict-upload-status" id="teachQueueProgress"></p>
+
+      <select id="teachLangFilter" class="lang-filter" aria-label="تصفية حسب اللغة"></select>
+      <div class="fb-history" id="teachList" style="margin-top:12px;">
+        <p class="fb-empty">لسه ما علّمتش أي إشارة مخصّصة.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== View: المفضلة السريعة ===================== -->
+  <div class="view" id="view-favorites">
+    <div class="section-card">
+      <h2>المفضلة السريعة</h2>
+      <p class="section-desc">احفظ الجمل والعبارات المهمة هنا لتظهر بحجم كبير على الشاشة عند الضغط عليها — مفيدة في المواقف الطارئة.</p>
+      <div class="fav-add-row">
+        <input type="text" id="favInput" placeholder="اكتب جملة لإضافتها للمفضلة…">
+        <button id="favAddBtn" type="button">إضافة</button>
+      </div>
+      <div class="fav-list" id="favList"></div>
+    </div>
+  </div>
+
+  <!-- ===================== View: تحويل النص إلى إشارات ===================== -->
+  <div class="view" id="view-t2s">
+    <div class="section-card">
+      <h2>تحويل النص إلى إشارات</h2>
+      <p class="section-desc">اكتب جملة عادية، وسيعرض التطبيق الكلمات والإشارات المرتبطة بها بالترتيب — وسيلة تواصل ثنائية الاتجاه مع الأشخاص الصم وضعاف السمع.</p>
+      <div class="t2s-input-row">
+        <input type="text" id="t2sInput" placeholder="مثال: صباح الخير كيف حالك">
+        <button id="t2sConvertBtn" type="button">تحويل</button>
+      </div>
+      <div class="t2s-results" id="t2sResults">
+        <p class="t2s-empty">اكتب جملة واضغط "تحويل" لعرض الإشارات المطابقة.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>يعمل التعرّف بالكامل داخل المتصفح عبر MediaPipe — لا يتم رفع أي فيديو إلى الإنترنت.</footer>
+
+  <div class="credit-signature">
+    <span class="line left"></span>
+    <p><span>المؤسس والمطور — </span>رحمة عبد القادر</p>
+    <span class="line"></span>
+  </div>
+
+</div>
+
+<!-- Emergency big-display overlay -->
+<div class="big-overlay" id="bigOverlay">
+  <button class="big-overlay-close" id="bigOverlayClose" type="button">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="big-overlay-text" id="bigOverlayText"></div>
+  <button class="big-overlay-speak" id="bigOverlaySpeak" type="button">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    نطق الجملة
+  </button>
+</div>
+
+<!-- عرض صورة/فيديو الإشارة بحجم كبير -->
+<div class="media-lightbox" id="mediaLightbox">
+  <button class="big-overlay-close" id="lightboxClose" type="button">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="lightbox-body" id="lightboxBody"></div>
+  <div class="lightbox-title" id="lightboxTitle"></div>
+</div>
+
+<!-- لوحة إضافة وإدارة الإشارات -->
+<div class="sign-modal" id="signModal" role="dialog" aria-modal="true" aria-label="إضافة إشارة جديدة">
+  <div class="sign-modal-panel">
+    <div class="sign-modal-head">
+      <h2>➕ لوحة إضافة الإشارات</h2>
+      <button class="icon-btn" id="signModalClose" type="button">✕ إغلاق</button>
+    </div>
+    <div class="sign-modal-status">
+      <button class="btn primary" id="modalCamBtn" type="button">تشغيل الكاميرا</button>
+      <span class="hand-count" id="teachHandBadge">0 يد مكتشفة</span>
+      <div class="teach-live" id="teachLive">—</div>
+    </div>
+    <div id="signModalBody"></div>
+  </div>
+</div>
+
+<!-- MediaPipe Hands (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- DOM refs ----------
+  const video               = document.getElementById('video');
+  const overlay             = document.getElementById('overlay');
+  const ctx                 = overlay.getContext('2d');
+  const placeholder         = document.getElementById('placeholder');
+  const startBtn            = document.getElementById('startBtn');
+  const stopBtn             = document.getElementById('stopBtn');
+  const statusDot           = document.getElementById('statusDot');
+  const statusText          = document.getElementById('statusText');
+  const handCountEl         = document.getElementById('handCount');
+  const translationDisplay  = document.getElementById('translationDisplay');
+  const translationSub      = document.getElementById('translationSub');
+  const holdFill            = document.getElementById('holdFill');
+  const liveDot             = document.getElementById('liveDot');
+  const speakCurrentBtn     = document.getElementById('speakCurrentBtn');
+  const addToSentenceBtn    = document.getElementById('addToSentenceBtn');
+  const sentenceBox         = document.getElementById('sentenceBox');
+  const clearSentenceBtn    = document.getElementById('clearSentenceBtn');
+  const speakSentenceBtn    = document.getElementById('speakSentenceBtn');
+  const autoToggle          = document.getElementById('autoToggle');
+  const autoModeLabel       = document.getElementById('autoModeLabel');
+  const teachNameInput      = document.getElementById('teachNameInput');
+  const teachRecordBtn      = document.getElementById('teachRecordBtn');
+  const teachStatus         = document.getElementById('teachStatus');
+  const teachList           = document.getElementById('teachList');
+  const queueLettersBtn     = document.getElementById('queueLettersBtn');
+  const queueColorsBtn      = document.getElementById('queueColorsBtn');
+  const queueAnimalsBtn     = document.getElementById('queueAnimalsBtn');
+  const queuePhrasesBtn     = document.getElementById('queuePhrasesBtn');
+  const queueControlsRow    = document.getElementById('queueControlsRow');
+  const queueSkipBtn        = document.getElementById('queueSkipBtn');
+  const queueStopBtn        = document.getElementById('queueStopBtn');
+  const teachQueueProgress  = document.getElementById('teachQueueProgress');
+  const teachPreview        = document.getElementById('teachPreview');
+  const teachAttachBtn      = document.getElementById('teachAttachBtn');
+  const teachSnapBtn        = document.getElementById('teachSnapBtn');
+  const teachVideoBtn       = document.getElementById('teachVideoBtn');
+  const teachMediaInput     = document.getElementById('teachMediaInput');
+  const teachPending        = document.getElementById('teachPending');
+  const autoSnapToggle      = document.getElementById('autoSnapToggle');
+  const matchSlider         = document.getElementById('matchSlider');
+  const matchSliderVal      = document.getElementById('matchSliderVal');
+  const refMedia            = document.getElementById('refMedia');
+  const refMediaHolder      = document.getElementById('refMediaHolder');
+  const refMediaCap         = document.getElementById('refMediaCap');
+  const lightbox            = document.getElementById('mediaLightbox');
+  const lightboxBody        = document.getElementById('lightboxBody');
+  const lightboxTitle       = document.getElementById('lightboxTitle');
+  const lightboxClose       = document.getElementById('lightboxClose');
+  const teachCard           = document.getElementById('teachCard');
+  const mirrorToggle        = document.getElementById('mirrorToggle');
+  let mirrorMatch           = true;
+  const signModal           = document.getElementById('signModal');
+  const signModalBody       = document.getElementById('signModalBody');
+  const signModalClose      = document.getElementById('signModalClose');
+  const modalCamBtn         = document.getElementById('modalCamBtn');
+  const teachHandBadge      = document.getElementById('teachHandBadge');
+  const teachLive           = document.getElementById('teachLive');
+  const teachLangInput      = document.getElementById('teachLangInput');
+  const teachLangList       = document.getElementById('teachLangList');
+  const teachLangFilter     = document.getElementById('teachLangFilter');
+  const signCountBadge      = document.getElementById('signCountBadge');
+  const DEFAULT_LANG        = 'لغة الإشارة العربية';
+  const LAST_LANG_KEY       = 'vibeSignLastLang';
+  let replaceTarget         = null;   // اسم إشارة هيتم استبدال بصماتها بالتسجيل الجاي
+
+  let camera = null;
+  let handsModel = null;
+
+  // ---------- Timing / streaming tuning ----------
+  const HOLD_MS        = 500;   // مدة استقرار الإشارة قبل اعتبارها "جاهزة" (نصف ثانية لمنع اللقطات العابرة)
+  const COOLDOWN_MS    = 2500;  // أقل فاصل زمني بين أي كلمتين تُضافان تلقائياً (2.5 ثانية)
+  const STATE_BUFFER_SIZE = 6;  // عدد الإطارات المستخدمة في فلتر التصويت لتثبيت قراءة الأصابع
+  const STATE_STABILITY_RATIO = 0.7; // نسبة الإجماع المطلوبة بين الإطارات الأخيرة قبل قبول القراءة
+
+  let holdGesture = null;      // الإشارة التي يتم قياس ثباتها حالياً
+  let holdStartTime = 0;
+
+  let lastCommitted = null;    // آخر كلمة تمت إضافتها فعلياً إلى الجملة
+  let lastCommitTime = -Infinity;
+
+  // ---------- Gesture dictionary ----------
+  // المفتاح: حالة الأصابع [إبهام, سبابة, وسطى, بنصر, خنصر] => 1 مفرودة / 0 مطوية
+  const GESTURES = {
+    "0,0,0,0,0": { label: "٠ / لا",        sub: "قبضة يد مغلقة" },
+    "1,1,1,1,1": { label: "٥ / مرحباً",     sub: "كف مفتوح بالكامل" },
+    "0,1,0,0,0": { label: "١ / واحد",       sub: "إصبع السبابة فقط" },
+    "0,1,1,0,0": { label: "٢ / علامة النصر", sub: "السبابة والوسطى" },
+    "0,1,1,1,0": { label: "٣ / ثلاثة",      sub: "ثلاث أصابع مفرودة" },
+    "0,1,1,1,1": { label: "٤ / أربعة",      sub: "أربع أصابع مفرودة" },
+    "1,0,0,0,0": { label: "أحسنت",         sub: "الإبهام فقط" },
+    "1,1,0,0,1": { label: "أحبك",          sub: "إبهام وسبابة وخنصر" },
+    "1,0,0,0,1": { label: "اتصل بي",       sub: "إبهام وخنصر (شاكا)" }
+  };
+  // ملاحظة مهمة: محرك التعرّف الحيّ لا يقرأ سوى وضعية "مفرود/مطوي" لكل إصبع (5 قيم ثنائية
+  // = 32 شكلاً مختلفاً كحد أقصى). هذا يكفي للأرقام من صفر إلى خمسة وعدد قليل من الإشارات
+  // الثابتة، لكنه لا يكفي إطلاقاً لتمييز أبجدية لغة الإشارة العربية كاملة (٢٨ حرفاً)، لأن
+  // حروفاً كثيرة تتشابه في عدد الأصابع المفرودة وتختلف فقط في التفاصيل الدقيقة (زاوية
+  // الإبهام، التفاف الأصابع، اتجاه الكف). لذلك أي شكل يد لا يطابق أحد المفاتيح أعلاه
+  // سيُعرض كـ"إشارة غير معروفة" ولن يُضاف إلى الجملة — وهذا هو السبب الذي تراه الآن مع
+  // معظم الحروف. يمكن توسيع هذه القائمة يدوياً عبر قسم "توسيع القاموس الشامل" (رفع ملف
+  // JSON يحوي gestures بنفس صيغة المفاتيح الثنائية أعلاه) لأي حرف تحدّده بنفسك.
+
+  // ---------- Helpers: finger state detection ----------
+  function dist(a, b){
+    const dx = a.x - b.x, dy = a.y - b.y, dz = (a.z||0) - (b.z||0);
+    return Math.sqrt(dx*dx + dy*dy + dz*dz);
+  }
+
+  // زاوية المفصل عند النقطة b بين الشعاعين (a→b) و(c→b) بالدرجات
+  // إصبع مفرود تماماً => الزاوية قريبة من 180°، إصبع مطوي => الزاوية صغيرة
+  function jointAngle(a, b, c){
+    const v1 = { x: a.x - b.x, y: a.y - b.y, z: (a.z||0) - (b.z||0) };
+    const v2 = { x: c.x - b.x, y: c.y - b.y, z: (c.z||0) - (b.z||0) };
+    const mag1 = Math.sqrt(v1.x*v1.x + v1.y*v1.y + v1.z*v1.z);
+    const mag2 = Math.sqrt(v2.x*v2.x + v2.y*v2.y + v2.z*v2.z);
+    if (mag1 * mag2 === 0) return 0;
+    const dot = v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
+    const cos = Math.min(1, Math.max(-1, dot / (mag1 * mag2)));
+    return Math.acos(cos) * 180 / Math.PI;
+  }
+
+  function getFingerStates(lm){
+    const wrist = lm[0];
+    // مقياس حجم اليد (المسافة بين المعصم وقاعدة الإصبع الأوسط) لتطبيع كل المسافات
+    // بحيث تعمل الدقة بنفس الكفاءة سواء كانت اليد قريبة أو بعيدة عن الكاميرا
+    const handScale = dist(wrist, lm[9]) || 0.0001;
+
+    function isUp(tipIdx, pipIdx, mcpIdx){
+      const tip = lm[tipIdx], pip = lm[pipIdx], mcp = lm[mcpIdx];
+      const angle = jointAngle(mcp, pip, tip);          // استقامة المفصل الأوسط
+      const tipToWrist = dist(tip, wrist);
+      const pipToWrist = dist(pip, wrist);
+      const extendedEnough = (tipToWrist - pipToWrist) > handScale * 0.16; // مسافة كافية مُطبَّعة بحجم اليد
+      return (angle >= 152 && extendedEnough) ? 1 : 0;
+    }
+
+    const index  = isUp(8, 6, 5);
+    const middle = isUp(12, 10, 9);
+    const ring   = isUp(16, 14, 13);
+    const pinky  = isUp(20, 18, 17);
+
+    // الإبهام: زاوية مفصله + بُعد طرفه عن راحة اليد (مُطبَّع بعرض الكف) لتفادي الخلط
+    // بين "قبضة/أربعة أصابع" (إبهام منطوٍ) و"كف مفتوح بالكامل" (إبهام ممدود)
+    const thumbAngle = jointAngle(lm[2], lm[3], lm[4]);
+    const palmWidth  = dist(lm[5], lm[17]) || 0.0001;
+    const thumbTipFromPalm = dist(lm[4], lm[5]);
+    const thumbUp = (thumbAngle >= 150 && thumbTipFromPalm > palmWidth * 0.55) ? 1 : 0;
+
+    return [thumbUp, index, middle, ring, pinky];
+  }
+
+  function matchGesture(states){
+    return GESTURES[states.join(',')] || null;
+  }
+
+  // ---------- فلتر التثبيت الزمني: تصويت أغلبية على آخر عدة إطارات ----------
+  // يمنع اعتماد أي قراءة أصابع ناتجة عن اهتزاز لحظي أو حركة يد عابرة أمام الكاميرا
+  let stateBuffer = [];
+
+  function getStableStates(rawStates){
+    stateBuffer.push(rawStates.join(','));
+    if (stateBuffer.length > STATE_BUFFER_SIZE) stateBuffer.shift();
+
+    const counts = {};
+    stateBuffer.forEach(key => { counts[key] = (counts[key] || 0) + 1; });
+
+    let bestKey = null, bestCount = 0;
+    Object.keys(counts).forEach(key => {
+      if (counts[key] > bestCount){ bestCount = counts[key]; bestKey = key; }
+    });
+
+    // لا نعتمد أي قراءة قبل امتلاء المخزن المؤقت بالكامل، ولا قبل إجماع واضح بين الإطارات
+    if (stateBuffer.length < STATE_BUFFER_SIZE) return null;
+    if (bestCount / stateBuffer.length < STATE_STABILITY_RATIO) return null;
+
+    return bestKey.split(',').map(Number);
+  }
+
+  function resetStateBuffer(){
+    stateBuffer = [];
+  }
+
+  // ---------- عدّ الأرقام بإيدين (٦ إلى ١٠) عند ظهور يدين في الإطار ----------
+  const NUMBER_WORDS = ['صفر', 'واحد', 'اثنان', 'ثلاثة', 'أربعة', 'خمسة', 'ستة', 'سبعة', 'ثمانية', 'تسعة', 'عشرة'];
+  const ARABIC_DIGITS = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠'];
+
+  function countExtendedFingers(lm){
+    const states = getFingerStates(lm);
+    return states.reduce((a, b) => a + b, 0);
+  }
+
+  let countBuffer = [];
+  function getStableCount(rawCount){
+    countBuffer.push(rawCount);
+    if (countBuffer.length > STATE_BUFFER_SIZE) countBuffer.shift();
+
+    const counts = {};
+    countBuffer.forEach(v => { counts[v] = (counts[v] || 0) + 1; });
+
+    let bestKey = null, bestCount = 0;
+    Object.keys(counts).forEach(k => {
+      if (counts[k] > bestCount){ bestCount = counts[k]; bestKey = k; }
+    });
+
+    if (countBuffer.length < STATE_BUFFER_SIZE) return null;
+    if (bestCount / countBuffer.length < STATE_STABILITY_RATIO) return null;
+    return Number(bestKey);
+  }
+
+  function resetCountBuffer(){
+    countBuffer = [];
+  }
+
+  // ---------- دمج إشارات يدوية مخصّصة (من قسم رفع القاموس) ----------
+  const CUSTOM_GESTURES_KEY = 'vibeSignCustomGestures';
+
+  function addGesture(key, data){
+    GESTURES[key] = { label: data.label, sub: data.sub || '' };
+    try {
+      const stored = JSON.parse(localStorage.getItem(CUSTOM_GESTURES_KEY)) || {};
+      stored[key] = GESTURES[key];
+      localStorage.setItem(CUSTOM_GESTURES_KEY, JSON.stringify(stored));
+    } catch(e){}
+  }
+
+  (function loadCustomGestures(){
+    try {
+      const stored = JSON.parse(localStorage.getItem(CUSTOM_GESTURES_KEY));
+      if (stored){
+        Object.keys(stored).forEach(key => { GESTURES[key] = stored[key]; });
+      }
+    } catch(e){}
+  })();
+
+  // ---------- "علّم الكاميرا إشارة جديدة": قاعدة إشارات ديناميكية بدون أي حد أقصى ----------
+  // بخلاف GESTURES أعلاه (اللي بيعتمد بس على مفرود/مطوي)، هنا كل إشارة بتتخزّن كالتالي:
+  //   • اسم الإشارة (أي نص: حرف، كلمة، حيوان…)
+  //   • مجموعة "بصمات" هندسية لليد (مواضع الـ21 نقطة نسبةً للمعصم ومُطبَّعة بحجم الكف)
+  //   • وسائط اختيارية (صورة أو فيديو) بتتحفظ في IndexedDB كمرجع بصري
+  // وأثناء التعرّف بنقارن اليد الحيّة بكل بصمات كل الإشارات المتعلَّمة ونختار الأقرب،
+  // بشرط إن المسافة تكون أقل من "عتبة المطابقة" (قابلة للضبط من شريط الحساسية).
+  const CUSTOM_SIGNS_KEY        = 'vibeSignCustomSignsV2';          // { اسم: { samples:[[63 رقم]…], media:'image'|'video'|null, updated } }
+  const LEGACY_LANDMARK_KEY     = 'vibeSignCustomLandmarkSigns';    // الصيغة القديمة (بصمة واحدة لكل إشارة) — بتترحّل تلقائياً
+  const THRESHOLD_KEY           = 'vibeSignMatchThreshold';
+  const RECORD_FRAMES           = 18;    // عدد الإطارات المُجمَّعة في التسجيل الواحد (~ثانية)
+  const PROTOTYPES_PER_TAKE     = 6;     // كل تسجيل بيتحوّل لـ 6 بصمات (متوسط كل 3 إطارات) عشان نلتقط الاهتزاز الطبيعي لليد
+  const MAX_PROTOTYPES_PER_SIGN = 60;    // سقف لكل إشارة لمنع تضخّم التخزين (الأقدم بيتشال أولاً) — مفيش سقف على عدد الإشارات نفسها
+  const COUNTDOWN_SECONDS       = 3;     // عدّ تنازلي قبل التسجيل عشان تلحق تجهّز يدك
+  const VIDEO_SECONDS           = 3;     // مدة الفيديو التوضيحي المسجَّل من الكاميرا
+  const MAX_UPLOAD_MB           = 40;    // أقصى حجم لملف صورة/فيديو مرفوع
+  const DEFAULT_MATCH_THRESHOLD = 0.85;  // أقصى مسافة إقليدية مقبولة لاعتماد أقرب إشارة
+
+  let matchThreshold   = DEFAULT_MATCH_THRESHOLD;
+  let customSigns      = Object.create(null);  // اسم الإشارة => { samples, media, updated }
+  let recordingSign    = null;   // { name, frames: [], snapPromise } أثناء تجميع الإطارات فقط
+  let teachBusy        = false;  // true أثناء العدّ التنازلي / التسجيل / التقاط الوسائط — الترجمة الحيّة بتتوقف مؤقتاً
+  let countdownTimer   = null;
+  let activeVideoRec   = null;
+  let customLabelBuffer = [];
+  let pendingMedia     = null;   // { blob, kind, url } وسائط جاهزة هتتربط بالإشارة القادمة
+  let shownRefName     = undefined;
+
+  function cleanSignName(name){
+    return (name || '').replace(/\s+/g, ' ').trim();
+  }
+
+  // مفتاح مقارنة الأسماء (يتجاهل التشكيل والهمزات والتاء المربوطة) — نفس منطق قاموس الدليل
+  function normalizeSignKey(w){
+    return (w || '')
+      .trim()
+      .replace(/[\u064B-\u0652\u0670\u0640]/g, '')
+      .replace(/[إأآا]/g, 'ا')
+      .replace(/ى/g, 'ي')
+      .replace(/ة/g, 'ه')
+      .toLowerCase();
+  }
+
+  // ---------- تخزين البصمات (localStorage) ----------
+  function persistCustomSigns(){
+    try {
+      localStorage.setItem(CUSTOM_SIGNS_KEY, JSON.stringify(customSigns));
+      return true;
+    } catch(e){
+      teachStatus.textContent = '⚠️ تعذّر حفظ الإشارات على الجهاز (مساحة التخزين ممتلئة أو غير متاحة).';
+      return false;
+    }
+  }
+
+  function loadCustomSigns(){
+    customSigns = Object.create(null);
+    try {
+      const raw = JSON.parse(localStorage.getItem(CUSTOM_SIGNS_KEY));
+      if (raw && typeof raw === 'object'){
+        Object.keys(raw).forEach(name => {
+          const s = raw[name];
+          if (s && Array.isArray(s.samples) && s.samples.length){
+            customSigns[name] = {
+              samples: s.samples,
+              media: (s.media === 'image' || s.media === 'video') ? s.media : null,
+              updated: s.updated || 0,
+              lang: s.lang || DEFAULT_LANG
+            };
+          }
+        });
+        return;
+      }
+    } catch(e){}
+
+    // ترحيل الصيغة القديمة: { اسم: [63 رقم] } => إشارة بعيّنة واحدة
+    try {
+      const legacy = JSON.parse(localStorage.getItem(LEGACY_LANDMARK_KEY));
+      if (legacy && typeof legacy === 'object'){
+        Object.keys(legacy).forEach(name => {
+          if (Array.isArray(legacy[name]) && legacy[name].length === 63){
+            customSigns[name] = { samples: [legacy[name]], media: null, updated: 0 };
+          }
+        });
+        persistCustomSigns();
+      }
+    } catch(e){}
+  }
+
+  function loadThreshold(){
+    try {
+      const v = parseFloat(localStorage.getItem(THRESHOLD_KEY));
+      if (isFinite(v) && v >= 0.3 && v <= 1.6) matchThreshold = v;
+    } catch(e){}
+    matchSlider.value = String(matchThreshold);
+    matchSliderVal.textContent = matchThreshold.toFixed(2);
+  }
+
+  matchSlider.addEventListener('input', () => {
+    matchThreshold = parseFloat(matchSlider.value) || DEFAULT_MATCH_THRESHOLD;
+    matchSliderVal.textContent = matchThreshold.toFixed(2);
+    try { localStorage.setItem(THRESHOLD_KEY, String(matchThreshold)); } catch(e){}
+  });
+
+  // ---------- تخزين الوسائط (IndexedDB) — بيستحمل فيديوهات بأحجام أكبر بكتير من localStorage ----------
+  const MEDIA_DB_NAME = 'vibeSignMediaDB';
+  const MEDIA_STORE   = 'media';
+  let mediaDbPromise  = null;
+
+  function openMediaDb(){
+    if (mediaDbPromise) return mediaDbPromise;
+    mediaDbPromise = new Promise((resolve, reject) => {
+      if (!('indexedDB' in window)){ reject(new Error('IndexedDB غير متاح')); return; }
+      const req = indexedDB.open(MEDIA_DB_NAME, 1);
+      req.onupgradeneeded = () => { req.result.createObjectStore(MEDIA_STORE, { keyPath: 'name' }); };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error || new Error('تعذّر فتح قاعدة الوسائط'));
+    });
+    return mediaDbPromise;
+  }
+
+  function mediaTx(mode, fn){
+    return openMediaDb().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(MEDIA_STORE, mode);
+      const req = fn(tx.objectStore(MEDIA_STORE));
+      tx.oncomplete = () => resolve(req ? req.result : undefined);
+      tx.onerror = () => reject(tx.error);
+      tx.onabort = () => reject(tx.error || new Error('أُلغيت عملية الحفظ'));
+    }));
+  }
+  const mediaPut    = (rec)  => mediaTx('readwrite', s => s.put(rec));
+  const mediaGet    = (name) => mediaTx('readonly',  s => s.get(name));
+  const mediaDelete = (name) => mediaTx('readwrite', s => s.delete(name));
+
+  // نخزّن الملف كـ ArrayBuffer (أثبت على متصفحات سفاري القديمة من تخزين Blob مباشرة)
+  function blobToBuffer(blob){
+    return new Promise((resolve, reject) => {
+      const fr = new FileReader();
+      fr.onload = () => resolve(fr.result);
+      fr.onerror = () => reject(fr.error);
+      fr.readAsArrayBuffer(blob);
+    });
+  }
+
+  const mediaUrlCache = new Map(); // اسم الإشارة => { url, kind }
+
+  function dropMediaCache(name){
+    const entry = mediaUrlCache.get(name);
+    if (entry){
+      try { URL.revokeObjectURL(entry.url); } catch(e){}
+      mediaUrlCache.delete(name);
+    }
+  }
+
+  async function getSignMedia(name){
+    if (mediaUrlCache.has(name)) return mediaUrlCache.get(name);
+    try {
+      const rec = await mediaGet(name);
+      if (!rec) return null;
+      const blob = new Blob([rec.data], { type: rec.type });
+      const entry = { url: URL.createObjectURL(blob), kind: rec.kind };
+      mediaUrlCache.set(name, entry);
+      return entry;
+    } catch(e){
+      return null;
+    }
+  }
+
+  async function setSignMedia(name, blob, kind){
+    const sign = customSigns[name];
+    if (!sign) throw new Error('الإشارة غير موجودة');
+    const data = await blobToBuffer(blob);
+    await mediaPut({
+      name: name,
+      kind: kind,
+      type: blob.type || (kind === 'video' ? 'video/webm' : 'image/jpeg'),
+      data: data,
+      updated: Date.now()
+    });
+    dropMediaCache(name);
+    sign.media = kind;
+    sign.updated = Date.now();
+    persistCustomSigns();
+    shownRefName = undefined;
+    renderCustomSignsList();
+    notifySignsChanged();
+  }
+
+  function notifySignsChanged(){
+    try { document.dispatchEvent(new CustomEvent('vibesign:signs-changed')); } catch(e){}
+  }
+
+  // ---------- أدوات المتجهات ----------
+  function landmarksToVector(lm){
+    const wrist = lm[0];
+    const scale = dist(wrist, lm[9]) || 0.0001;
+    const vec = [];
+    lm.forEach(pt => {
+      vec.push((pt.x - wrist.x) / scale);
+      vec.push((pt.y - wrist.y) / scale);
+      vec.push(((pt.z || 0) - (wrist.z || 0)) / scale);
+    });
+    return vec;
+  }
+
+  function averageVectors(frames){
+    const len = frames[0].length;
+    const sum = new Array(len).fill(0);
+    frames.forEach(vec => { for (let i = 0; i < len; i++) sum[i] += vec[i]; });
+    return sum.map(v => v / frames.length);
+  }
+
+  function roundVec(vec){
+    return vec.map(v => Math.round(v * 10000) / 10000);
+  }
+
+  // مسافة إقليدية مع خروج مبكر لو تعدّت الحد المسموح (بيسرّع المقارنة مع مئات البصمات)
+  function vectorDistance(a, b, cutoff){
+    const limit = (cutoff === undefined || cutoff === Infinity) ? Infinity : cutoff * cutoff;
+    let total = 0;
+    for (let i = 0; i < a.length; i++){
+      const d = a[i] - (b[i] || 0);
+      total += d * d;
+      if (total > limit) return Infinity;
+    }
+    return Math.sqrt(total);
+  }
+
+  // تسجيل واحد (18 إطار) => 6 بصمات (متوسط كل 3 إطارات) بدل بصمة واحدة
+  function framesToPrototypes(frames){
+    const chunk = Math.max(1, Math.floor(frames.length / PROTOTYPES_PER_TAKE));
+    const out = [];
+    for (let i = 0; i < frames.length; i += chunk){
+      const part = frames.slice(i, i + chunk);
+      if (out.length && part.length < Math.ceil(chunk / 2)) break; // نتجاهل ذيل قصير جداً
+      out.push(roundVec(averageVectors(part)));
+    }
+    return out;
+  }
+
+  // ---------- التعرّف: أقرب بصمة بين كل الإشارات المتعلَّمة (أي عدد) ----------
+  function nearestCustomSign(lm){
+    const names = Object.keys(customSigns);
+    if (!names.length) return null;
+    const vec = landmarksToVector(lm);
+    const vecM = mirrorMatch ? vec.map((v, i) => (i % 3 === 0 ? -v : v)) : null;  // نسخة معكوسة (يد يمين ↔ شمال)
+    let bestName = null, bestDist = Infinity;
+    for (let n = 0; n < names.length; n++){
+      const samples = customSigns[names[n]].samples;
+      for (let s = 0; s < samples.length; s++){
+        const cutoff = Math.min(bestDist, matchThreshold);
+        let d = vectorDistance(vec, samples[s], cutoff);
+        if (vecM){ const d2 = vectorDistance(vecM, samples[s], Math.min(cutoff, d)); if (d2 < d) d = d2; }
+        if (d <= cutoff && d < bestDist){ bestDist = d; bestName = names[n]; }
+      }
+    }
+    return bestName;
+  }
+
+  function getStableCustomLabel(rawLabel){
+    customLabelBuffer.push(rawLabel || '');
+    if (customLabelBuffer.length > STATE_BUFFER_SIZE) customLabelBuffer.shift();
+    const counts = {};
+    customLabelBuffer.forEach(k => { counts[k] = (counts[k] || 0) + 1; });
+    let bestKey = '', bestCount = 0;
+    Object.keys(counts).forEach(k => { if (counts[k] > bestCount){ bestCount = counts[k]; bestKey = k; } });
+    if (customLabelBuffer.length < STATE_BUFFER_SIZE) return null;
+    if (bestCount / customLabelBuffer.length < STATE_STABILITY_RATIO) return null;
+    return bestKey || null;
+  }
+
+  function resetCustomLabelBuffer(){ customLabelBuffer = []; }
+
+  // ---------- عرض الوسائط المرتبطة بالإشارة ----------
+  function buildMediaEl(url, kind, opts){
+    opts = opts || {};
+    if (kind === 'video'){
+      const v = document.createElement('video');
+      v.src = opts.preview ? (url + '#t=0.1') : url;
+      v.muted = true;
+      v.setAttribute('playsinline', '');
+      if (opts.preview) v.preload = 'metadata';
+      if (opts.controls) v.controls = true;
+      if (opts.autoplay){ v.autoplay = true; v.loop = true; }
+      return v;
+    }
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = opts.alt || '';
+    return img;
+  }
+
+  // المرجع البصري تحت الترجمة الحيّة: بيظهر أول ما الكاميرا تتعرّف على إشارة ليها صورة/فيديو
+  function hideReference(){
+    refMedia.classList.remove('show');
+    const v = refMediaHolder.querySelector('video');
+    if (v){ try { v.pause(); } catch(e){} }
+    refMediaHolder.innerHTML = '';
+    refMediaCap.textContent = '';
+  }
+
+  function showReferenceFor(name){
+    if (name === shownRefName) return;
+    shownRefName = name;
+    if (!name || !customSigns[name] || !customSigns[name].media){ hideReference(); return; }
+    getSignMedia(name).then(entry => {
+      if (shownRefName !== name) return;
+      if (!entry){ hideReference(); return; }
+      refMediaHolder.innerHTML = '';
+      refMediaHolder.appendChild(buildMediaEl(entry.url, entry.kind, { autoplay: true, alt: name }));
+      refMediaCap.textContent = 'الشكل المرجعي';
+      refMedia.classList.add('show');
+      const v = refMediaHolder.querySelector('video');
+      if (v){ const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    });
+  }
+
+  function openLightbox(name){
+    const sign = customSigns[name];
+    if (!sign || !sign.media) return;
+    getSignMedia(name).then(entry => {
+      if (!entry) return;
+      lightboxBody.innerHTML = '';
+      lightboxBody.appendChild(buildMediaEl(entry.url, entry.kind, { controls: true, autoplay: true, alt: name }));
+      lightboxTitle.textContent = name;
+      lightbox.classList.add('active');
+    });
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('active');
+    lightboxBody.innerHTML = '';
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+  // ---------- تجهيز ملف مرفوع (صورة/فيديو) ----------
+  function downscaleImage(file, maxSide){
+    return new Promise((resolve) => {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        const s = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+        const c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(img.naturalWidth * s));
+        c.height = Math.max(1, Math.round(img.naturalHeight * s));
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(b => resolve(b || file), 'image/jpeg', 0.85);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+      img.src = url;
+    });
+  }
+
+  async function prepareMediaFile(file){
+    const isVideo = /^video\//.test(file.type);
+    const isImage = /^image\//.test(file.type);
+    if (!isVideo && !isImage) throw new Error('نوع الملف غير مدعوم — اختار صورة أو فيديو.');
+    if (file.size > MAX_UPLOAD_MB * 1024 * 1024){
+      throw new Error('الملف كبير (أكتر من ' + MAX_UPLOAD_MB + ' ميجا) — اختار ملف أصغر أو قصّر الفيديو.');
+    }
+    if (isVideo) return { blob: file, kind: 'video' };
+    if (file.type === 'image/gif' || file.size < 400 * 1024) return { blob: file, kind: 'image' };
+    return { blob: await downscaleImage(file, 900), kind: 'image' };
+  }
+
+  // ---------- التقاط لقطة / فيديو من الكاميرا (معكوسين مثل شاشة المعاينة) ----------
+  function captureSnapshotBlob(){
+    return new Promise((resolve) => {
+      const vw = video.videoWidth, vh = video.videoHeight;
+      if (!vw || !vh){ resolve(null); return; }
+      const scale = Math.min(1, 480 / vw);
+      const c = document.createElement('canvas');
+      c.width = Math.round(vw * scale);
+      c.height = Math.round(vh * scale);
+      const cx = c.getContext('2d');
+      cx.translate(c.width, 0);
+      cx.scale(-1, 1);
+      cx.drawImage(video, 0, 0, c.width, c.height);
+      try { c.toBlob(b => resolve(b), 'image/jpeg', 0.82); } catch(e){ resolve(null); }
+    });
+  }
+
+  function recordShortVideo(){
+    const vw = video.videoWidth, vh = video.videoHeight;
+    const c = document.createElement('canvas');
+    if (!vw || !vh || typeof MediaRecorder === 'undefined' || !c.captureStream){
+      cancelTeaching('تسجيل الفيديو مش مدعوم على المتصفح ده — استخدم "رفع صورة / فيديو" بدلاً منه.');
+      return;
+    }
+    const scale = Math.min(1, 480 / vw);
+    c.width = Math.round(vw * scale);
+    c.height = Math.round(vh * scale);
+    const cx = c.getContext('2d');
+    let raf = 0, drawing = true;
+    const draw = () => {
+      if (!drawing) return;
+      cx.setTransform(-1, 0, 0, 1, c.width, 0);
+      cx.drawImage(video, 0, 0, c.width, c.height);
+      raf = requestAnimationFrame(draw);
+    };
+    draw();
+
+    const mimes = ['video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm', 'video/mp4'];
+    const mime = mimes.find(m => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(m)) || '';
+    let rec;
+    try {
+      rec = new MediaRecorder(c.captureStream(24), mime ? { mimeType: mime, videoBitsPerSecond: 1000000 } : undefined);
+    } catch(e){
+      drawing = false;
+      cancelTeaching('تعذّر بدء تسجيل الفيديو على المتصفح ده — ارفع ملف بدلاً منه.');
+      return;
+    }
+
+    const chunks = [];
+    rec.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+    rec.onstop = () => {
+      drawing = false;
+      cancelAnimationFrame(raf);
+      activeVideoRec = null;
+      if (rec._cancelled) return;
+      const blob = new Blob(chunks, { type: rec.mimeType || mime || 'video/webm' });
+      if (blob.size){
+        setPendingMedia(blob, 'video');
+        teachStatus.textContent = '✓ اتسجّل فيديو (' + VIDEO_SECONDS + ' ثواني) — اكتب اسم الإشارة واضغط "التقاط بصمة اليد".';
+      } else {
+        teachStatus.textContent = 'تعذّر تسجيل الفيديو — جرّب تاني أو ارفع ملف.';
+      }
+      endTeachBusy();
+    };
+    activeVideoRec = rec;
+    rec.start();
+    teachStatus.textContent = '🔴 جارٍ تسجيل الفيديو… (' + VIDEO_SECONDS + ' ثواني)';
+    setTimeout(() => { if (rec.state !== 'inactive') rec.stop(); }, VIDEO_SECONDS * 1000);
+  }
+
+  // ---------- وسائط "جاهزة للربط" بالإشارة القادمة ----------
+  function renderPending(){
+    teachPending.innerHTML = '';
+    if (!pendingMedia){ teachPending.style.display = 'none'; return; }
+    teachPending.style.display = 'flex';
+    teachPending.appendChild(buildMediaEl(pendingMedia.url, pendingMedia.kind, { controls: pendingMedia.kind === 'video' }));
+    const label = document.createElement('span');
+    label.textContent = (pendingMedia.kind === 'video' ? 'فيديو' : 'صورة') + ' جاهزة — هتتربط بالإشارة اللي هتسجّلها.';
+    teachPending.appendChild(label);
+    const rm = document.createElement('button');
+    rm.type = 'button';
+    rm.className = 'mini-btn danger';
+    rm.textContent = 'إزالة';
+    rm.addEventListener('click', clearPendingMedia);
+    teachPending.appendChild(rm);
+  }
+
+  function setPendingMedia(blob, kind){
+    clearPendingMedia();
+    pendingMedia = { blob: blob, kind: kind, url: URL.createObjectURL(blob) };
+    renderPending();
+  }
+
+  function clearPendingMedia(){
+    if (pendingMedia){
+      try { URL.revokeObjectURL(pendingMedia.url); } catch(e){}
+      pendingMedia = null;
+    }
+    renderPending();
+  }
+
+  teachAttachBtn.addEventListener('click', () => teachMediaInput.click());
+  teachMediaInput.addEventListener('change', async () => {
+    const file = teachMediaInput.files && teachMediaInput.files[0];
+    teachMediaInput.value = '';
+    if (!file) return;
+    try {
+      const prepared = await prepareMediaFile(file);
+      setPendingMedia(prepared.blob, prepared.kind);
+      teachStatus.textContent = '✓ تم اختيار ' + (prepared.kind === 'video' ? 'الفيديو' : 'الصورة') + ' — اكتب اسم الإشارة واضغط "التقاط بصمة اليد".';
+    } catch(err){
+      teachStatus.textContent = err.message || 'تعذّر قراءة الملف.';
+    }
+  });
+
+  // ---------- قائمة الإشارات المتعلَّمة ----------
+  async function deleteCustomSign(name){
+    if (!window.confirm('حذف إشارة "' + name + '" وكل بصماتها ووسائطها؟')) return;
+    delete customSigns[name];
+    persistCustomSigns();
+    dropMediaCache(name);
+    try { await mediaDelete(name); } catch(e){}
+    shownRefName = undefined;
+    renderCustomSignsList();
+    notifySignsChanged();
+  }
+
+  async function attachFileToSign(name, file){
+    try {
+      const prepared = await prepareMediaFile(file);
+      await setSignMedia(name, prepared.blob, prepared.kind);
+      teachStatus.textContent = '✓ تم ربط ' + (prepared.kind === 'video' ? 'الفيديو' : 'الصورة') + ' بإشارة "' + name + '".';
+    } catch(err){
+      teachStatus.textContent = (err && err.message) ? err.message : 'تعذّر حفظ الوسائط على المتصفح ده.';
+    }
+  }
+
+  function renderCustomSignsList(){
+    refreshLangControls();
+    const all = Object.keys(customSigns);
+    signCountBadge.textContent = all.length ? String(all.length) : '';
+    const langFilter = teachLangFilter.value;
+    const names = all.filter(n => !langFilter || (customSigns[n].lang || DEFAULT_LANG) === langFilter);
+    if (!names.length){
+      teachList.innerHTML = '<p class="fb-empty">' + (all.length ? 'مفيش إشارات في اللغة دي.' : 'لسه ما علّمتش أي إشارة مخصّصة.') + '</p>';
+      return;
+    }
+    teachList.innerHTML = '';
+    names.forEach(name => {
+      const sign = customSigns[name];
+      const row = document.createElement('div');
+      row.className = 'fb-item sign-item';
+
+      const thumb = document.createElement('button');
+      thumb.type = 'button';
+      thumb.className = 'sign-thumb';
+      if (sign.media){
+        thumb.title = 'عرض';
+        thumb.addEventListener('click', () => openLightbox(name));
+        getSignMedia(name).then(entry => {
+          if (!entry) return;
+          thumb.innerHTML = '';
+          thumb.appendChild(buildMediaEl(entry.url, entry.kind, { preview: true, alt: name }));
+          if (entry.kind === 'video'){
+            const badge = document.createElement('span');
+            badge.className = 'play-badge';
+            badge.textContent = '▶';
+            thumb.appendChild(badge);
+          }
+        });
+      } else {
+        thumb.textContent = '🖐';
+        thumb.disabled = true;
+      }
+
+      const info = document.createElement('div');
+      info.className = 'sign-info';
+      const label = document.createElement('span');
+      label.className = 'fb-item-text';
+      label.textContent = name;
+      const meta = document.createElement('span');
+      meta.className = 'sign-meta';
+      meta.innerHTML = '<span class="lang-badge"></span>';
+      meta.firstChild.textContent = sign.lang || DEFAULT_LANG;
+      meta.appendChild(document.createTextNode(sign.samples.length + ' بصمة · ' + (sign.media === 'video' ? 'فيديو' : sign.media === 'image' ? 'صورة' : 'بدون وسائط')));
+      info.appendChild(label);
+      info.appendChild(meta);
+
+      const actions = document.createElement('div');
+      actions.className = 'sign-actions';
+
+      const addBtn = document.createElement('button');
+      addBtn.type = 'button';
+      addBtn.className = 'mini-btn';
+      addBtn.textContent = '＋ عيّنة';
+      addBtn.title = 'سجّل عيّنة إضافية لنفس الإشارة لتحسين الدقة';
+      addBtn.addEventListener('click', () => beginTeaching(name));
+
+      const mediaBtn = document.createElement('button');
+      mediaBtn.type = 'button';
+      mediaBtn.className = 'mini-btn';
+      mediaBtn.textContent = '🖼 وسائط';
+      const fileIn = document.createElement('input');
+      fileIn.type = 'file';
+      fileIn.accept = 'image/*,video/*';
+      fileIn.style.display = 'none';
+      mediaBtn.addEventListener('click', () => fileIn.click());
+      fileIn.addEventListener('change', () => {
+        const f = fileIn.files && fileIn.files[0];
+        fileIn.value = '';
+        if (f) attachFileToSign(name, f);
+      });
+
+      const delBtn = document.createElement('button');
+      delBtn.type = 'button';
+      delBtn.className = 'mini-btn danger';
+      delBtn.textContent = 'حذف';
+      delBtn.addEventListener('click', () => deleteCustomSign(name));
+
+      const editBtn = document.createElement('button');
+      editBtn.type = 'button';
+      editBtn.className = 'mini-btn';
+      editBtn.textContent = '✏️ تعديل';
+      editBtn.title = 'غيّر الاسم أو اللغة';
+      editBtn.addEventListener('click', () => editCustomSign(name));
+
+      const replBtn = document.createElement('button');
+      replBtn.type = 'button';
+      replBtn.className = 'mini-btn';
+      replBtn.textContent = '🔄 استبدال';
+      replBtn.title = 'امسح البصمات القديمة وسجّل الحركة من جديد';
+      replBtn.addEventListener('click', () => {
+        if (teachBusy || !requireCamera()) return;
+        if (!window.confirm('استبدال كل بصمات "' + name + '" بتسجيل جديد؟')) return;
+        replaceTarget = name;
+        beginTeaching(name);
+      });
+
+      actions.appendChild(addBtn);
+      actions.appendChild(replBtn);
+      actions.appendChild(editBtn);
+      actions.appendChild(mediaBtn);
+      actions.appendChild(delBtn);
+      actions.appendChild(fileIn);
+
+      row.appendChild(thumb);
+      row.appendChild(info);
+      row.appendChild(actions);
+      teachList.appendChild(row);
+    });
+  }
+
+  // ---------- دورة التعليم: عدّ تنازلي ← تجميع الإطارات ← حفظ (بصمات + وسائط) ----------
+  function setTeachControlsDisabled(disabled){
+    teachRecordBtn.disabled = disabled;
+    teachSnapBtn.disabled = disabled;
+    teachVideoBtn.disabled = disabled;
+  }
+
+  function endTeachBusy(){
+    teachBusy = false;
+    setTeachControlsDisabled(false);
+    teachRecordBtn.textContent = 'التقاط بصمة اليد';
+  }
+
+  function cancelTeaching(message){
+    if (countdownTimer){ clearTimeout(countdownTimer); countdownTimer = null; }
+    if (activeVideoRec){
+      activeVideoRec._cancelled = true;
+      try { if (activeVideoRec.state !== 'inactive') activeVideoRec.stop(); } catch(e){}
+      activeVideoRec = null;
+    }
+    recordingSign = null;
+    replaceTarget = null;
+    endTeachBusy();
+    if (message) teachStatus.textContent = message;
+  }
+
+  function requireCamera(){
+    if (!camera){
+      teachStatus.textContent = 'شغّل الكاميرا أولاً بزر "تشغيل الكاميرا" فوق، وبعدين سجّل الإشارة.';
+      return false;
+    }
+    return true;
+  }
+
+  function startCountdown(describe, onDone){
+    teachBusy = true;
+    setTeachControlsDisabled(true);
+    let remaining = COUNTDOWN_SECONDS;
+    const tick = () => {
+      if (!camera){ cancelTeaching('الكاميرا اتقفلت — شغّلها وحاول تاني.'); return; }
+      if (remaining > 0){
+        teachStatus.textContent = describe + ' — يبدأ بعد ' + remaining + ' ث… جهّز يدك أمام الكاميرا';
+        remaining--;
+        countdownTimer = setTimeout(tick, 1000);
+      } else {
+        countdownTimer = null;
+        onDone();
+      }
+    };
+    tick();
+  }
+
+  function beginTeaching(rawName){
+    const name = cleanSignName(rawName);
+    if (!name){
+      teachStatus.textContent = 'اكتب اسم الإشارة أولاً (مثال: حرف الألف، أحمر، قطة).';
+      return;
+    }
+    if (teachBusy) return;
+    if (!requireCamera()) return;
+    teachNameInput.value = name;
+    teachRecordBtn.textContent = 'جارٍ التحضير…';
+    startCountdown('تسجيل إشارة "' + name + '"', () => {
+      recordingSign = { name: name, frames: [], snapPromise: null, lang: teachLangInput.value };
+      teachRecordBtn.textContent = 'جارٍ التسجيل…';
+      teachStatus.textContent = 'ثبّت يدك… ابدأ!';
+    });
+  }
+
+  async function finishRecording(){
+    const rec = recordingSign;
+    recordingSign = null;
+    const name = rec.name;
+    const existing = customSigns[name];
+    const sign = existing || { samples: [], media: null, updated: 0 };
+
+    const fresh = framesToPrototypes(rec.frames);
+    sign.samples = (replaceTarget === name) ? fresh : sign.samples.concat(fresh);
+    replaceTarget = null;
+    sign.lang = cleanSignName(rec.lang) || sign.lang || DEFAULT_LANG;
+    if (sign.samples.length > MAX_PROTOTYPES_PER_SIGN){
+      sign.samples = sign.samples.slice(sign.samples.length - MAX_PROTOTYPES_PER_SIGN);
+    }
+    sign.updated = Date.now();
+    customSigns[name] = sign;
+    persistCustomSigns();
+    resetCustomLabelBuffer();
+
+    // الوسائط: اللي المستخدم جهّزها لها الأولوية، وإلا لقطة تلقائية (بس لو الإشارة ملهاش وسائط لسه)
+    let mediaNote = '';
+    try {
+      let media = pendingMedia ? { blob: pendingMedia.blob, kind: pendingMedia.kind } : null;
+      if (!media && !sign.media && autoSnapToggle.checked && rec.snapPromise){
+        const b = await rec.snapPromise;
+        if (b) media = { blob: b, kind: 'image' };
+      }
+      if (media){
+        await setSignMedia(name, media.blob, media.kind);
+        mediaNote = media.kind === 'video' ? ' + فيديو توضيحي' : ' + صورة توضيحية';
+      }
+    } catch(err){
+      mediaNote = ' (تعذّر حفظ الوسائط على المتصفح ده — الإشارة نفسها اتحفظت)';
+    }
+
+    clearPendingMedia();
+    endTeachBusy();
+    renderCustomSignsList();
+    notifySignsChanged();
+
+    teachStatus.textContent = existing
+      ? '✓ اتضافت عيّنة جديدة لإشارة "' + name + '" (الإجمالي ' + sign.samples.length + ' بصمة)' + mediaNote
+      : '✓ تم حفظ إشارة "' + name + '"' + mediaNote;
+
+    if (teachQueueIndex !== -1){
+      advanceQueue();
+    } else {
+      teachStatus.textContent += ' — جرّبها الآن أمام الكاميرا.';
+    }
+  }
+
+  function syncTeachPreview(){
+    modalCamBtn.style.display = camera ? 'none' : 'inline-flex';
+    if (camera && video.srcObject){
+      teachPreview.srcObject = video.srcObject;
+      teachPreview.style.display = 'block';
+      const p = teachPreview.play();
+      if (p && p.catch) p.catch(() => {});
+    } else {
+      teachPreview.srcObject = null;
+      teachPreview.style.display = 'none';
+    }
+  }
+
+  // ---------- مسار سريع لتعليم الأساسيات (حروف / ألوان / حيوانات) بالتتابع ----------
+  const BASIC_LETTERS = ['حرف الألف','حرف الباء','حرف التاء','حرف الثاء','حرف الجيم','حرف الحاء','حرف الخاء','حرف الدال','حرف الذال','حرف الراء','حرف الزاي','حرف السين','حرف الشين','حرف الصاد','حرف الضاد','حرف الطاء','حرف الظاء','حرف العين','حرف الغين','حرف الفاء','حرف القاف','حرف الكاف','حرف اللام','حرف الميم','حرف النون','حرف الهاء','حرف الواو','حرف الياء'];
+  const BASIC_COLORS  = ['أحمر','أصفر','أبيض','ذهبي','أخضر','بنفسجي','أسود','وردي','رمادي','بني','أزرق'];
+  const BASIC_ANIMALS = ['قطة','كلب','أسد','فيل','عصفور','سمكة','حصان','أرنب','دجاجة','خروف'];
+  const BASIC_PHRASES = ['أهلاً','شكراً','اسمي','نعم','من فضلك','أنا أحبك','مساعدة','لا','ألم شديد','ألم','توقف','عذراً','يأكل','يشرب','المزيد','حمام','كيف','ماذا','أين','متى'];
+
+  let teachQueue = [];
+  let teachQueueIndex = -1;
+
+  function startQueue(list){
+    teachQueue = list.slice();
+    teachQueueIndex = 0;
+    queueControlsRow.style.display = 'flex';
+    loadCurrentQueueItem();
+  }
+
+  function loadCurrentQueueItem(){
+    if (teachQueueIndex < 0 || teachQueueIndex >= teachQueue.length){
+      teachQueueProgress.textContent = teachQueue.length ? '✓ خلصت المسار السريع بالكامل!' : '';
+      teachQueue = [];
+      teachQueueIndex = -1;
+      queueControlsRow.style.display = 'none';
+      teachNameInput.value = '';
+      return;
+    }
+    teachNameInput.value = teachQueue[teachQueueIndex];
+    teachQueueProgress.textContent = 'العنصر ' + (teachQueueIndex + 1) + ' من ' + teachQueue.length + ' — ثبّت يدك بشكل "' + teachQueue[teachQueueIndex] + '" ثم دوس التقاط بصمة اليد.';
+  }
+
+  function advanceQueue(){
+    teachQueueIndex++;
+    loadCurrentQueueItem();
+  }
+
+  queueLettersBtn.addEventListener('click', () => startQueue(BASIC_LETTERS));
+  queueColorsBtn.addEventListener('click', () => startQueue(BASIC_COLORS));
+  queueAnimalsBtn.addEventListener('click', () => startQueue(BASIC_ANIMALS));
+  queuePhrasesBtn.addEventListener('click', () => startQueue(BASIC_PHRASES));
+  queueSkipBtn.addEventListener('click', () => { if (teachQueueIndex !== -1) advanceQueue(); });
+  queueStopBtn.addEventListener('click', () => {
+    teachQueue = [];
+    teachQueueIndex = -1;
+    queueControlsRow.style.display = 'none';
+    teachQueueProgress.textContent = '';
+  });
+
+  teachRecordBtn.addEventListener('click', () => beginTeaching(teachNameInput.value));
+  teachNameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') teachRecordBtn.click();
+  });
+  teachNameInput.addEventListener('input', () => {
+    if (teachBusy) return;
+    const n = cleanSignName(teachNameInput.value);
+    if (n && customSigns[n]){
+      teachStatus.textContent = 'إشارة "' + n + '" موجودة (' + customSigns[n].samples.length + ' بصمة) — التسجيل هيضيف عيّنة جديدة تحسّن الدقة.';
+    }
+  });
+
+  teachSnapBtn.addEventListener('click', () => {
+    if (teachBusy || !requireCamera()) return;
+    startCountdown('التقاط صورة', async () => {
+      const blob = await captureSnapshotBlob();
+      if (blob){
+        setPendingMedia(blob, 'image');
+        teachStatus.textContent = '✓ تم التقاط الصورة — اكتب اسم الإشارة واضغط "التقاط بصمة اليد".';
+      } else {
+        teachStatus.textContent = 'تعذّر التقاط الصورة.';
+      }
+      endTeachBusy();
+    });
+  });
+
+  teachVideoBtn.addEventListener('click', () => {
+    if (teachBusy || !requireCamera()) return;
+    startCountdown('تسجيل فيديو توضيحي', recordShortVideo);
+  });
+
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ---------- اللغات + التعديل + لوحة الإضافة ----------
+  function refreshLangControls(){
+    const langs = [DEFAULT_LANG, 'لغة الإشارة الأمريكية (ASL)'];
+    Object.keys(customSigns).forEach(n => { const l = customSigns[n].lang || DEFAULT_LANG; if (langs.indexOf(l) === -1) langs.push(l); });
+    teachLangList.innerHTML = '';
+    langs.forEach(l => { const o = document.createElement('option'); o.value = l; teachLangList.appendChild(o); });
+    const used = langs.filter(l => Object.keys(customSigns).some(n => (customSigns[n].lang || DEFAULT_LANG) === l));
+    const prev = teachLangFilter.value;
+    teachLangFilter.innerHTML = '';
+    [''].concat(used).forEach(l => { const o = document.createElement('option'); o.value = l; o.textContent = l || 'كل اللغات'; teachLangFilter.appendChild(o); });
+    teachLangFilter.value = used.indexOf(prev) !== -1 ? prev : '';
+  }
+
+  async function editCustomSign(oldName){
+    const sign = customSigns[oldName];
+    if (!sign) return;
+    const nameIn = window.prompt('اسم الإشارة:', oldName);
+    if (nameIn === null) return;
+    const newName = cleanSignName(nameIn);
+    if (!newName) return;
+    const langIn = window.prompt('اللغة / التصنيف:', sign.lang || DEFAULT_LANG);
+    if (langIn === null) return;
+    if (newName !== oldName){
+      if (customSigns[newName]){ teachStatus.textContent = '⚠️ فيه إشارة بنفس الاسم "' + newName + '" بالفعل.'; return; }
+      customSigns[newName] = sign;
+      delete customSigns[oldName];
+      try {
+        const rec = await mediaGet(oldName);
+        if (rec){ rec.name = newName; await mediaPut(rec); await mediaDelete(oldName); }
+      } catch(e){}
+      dropMediaCache(oldName);
+    }
+    sign.lang = cleanSignName(langIn) || DEFAULT_LANG;
+    sign.updated = Date.now();
+    persistCustomSigns();
+    shownRefName = undefined;
+    resetCustomLabelBuffer();
+    renderCustomSignsList();
+    notifySignsChanged();
+    teachStatus.textContent = '✓ تم تعديل الإشارة.';
+  }
+
+  try { const l = localStorage.getItem(LAST_LANG_KEY); if (l) teachLangInput.value = l; } catch(e){}
+  teachLangInput.addEventListener('change', () => {
+    try { localStorage.setItem(LAST_LANG_KEY, cleanSignName(teachLangInput.value) || DEFAULT_LANG); } catch(e){}
+  });
+  teachLangFilter.addEventListener('change', renderCustomSignsList);
+  try { mirrorMatch = localStorage.getItem('vibeSignMirror') !== '0'; } catch(e){}
+  mirrorToggle.checked = mirrorMatch;
+  mirrorToggle.addEventListener('change', () => {
+    mirrorMatch = mirrorToggle.checked;
+    resetCustomLabelBuffer();
+    try { localStorage.setItem('vibeSignMirror', mirrorMatch ? '1' : '0'); } catch(e){}
+  });
+
+  // ---------- جسر المزامنة مع Firestore (بيستخدمه الـ module script تحت) ----------
+  function getSignThumbData(name){
+    const sg = customSigns[name];
+    if (!sg || sg.media !== 'image') return Promise.resolve(null);
+    return getSignMedia(name).then(e => !e ? null : new Promise(res => {
+      const img = new Image();
+      img.onload = () => {
+        const k = Math.min(1, 320 / (Math.max(img.width, img.height) || 1));
+        const c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(img.width * k)); c.height = Math.max(1, Math.round(img.height * k));
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        res(c.toDataURL('image/jpeg', 0.7));
+      };
+      img.onerror = () => res(null);
+      img.src = e.url;
+    }));
+  }
+
+  async function applyRemoteSign(name, d){
+    const local = customSigns[name];
+    if (local && (local.updated || 0) >= (d.updated || 0)) return false;
+    const samples = (d.samples || []).map(t => String(t).split(',').map(Number)).filter(v => v.length === 63 && v.every(isFinite));
+    if (!samples.length) return false;
+    const sign = { samples: samples, media: local ? local.media : null, updated: d.updated || 0, lang: d.lang || DEFAULT_LANG };
+    customSigns[name] = sign;
+    persistCustomSigns();
+    resetCustomLabelBuffer();
+    shownRefName = undefined;
+    if (d.thumb && !sign.media){
+      try {
+        const blob = await (await fetch(d.thumb)).blob();
+        await setSignMedia(name, blob, 'image');
+        sign.updated = d.updated || 0;      // نرجّع التوقيت الأصلي عشان ما يحصلش رفع مرتد
+        persistCustomSigns();
+      } catch(e){}
+    }
+    renderCustomSignsList();
+    notifySignsChanged();
+    return true;
+  }
+
+  async function removeLocalSign(name){
+    if (!customSigns[name]) return;
+    delete customSigns[name];
+    persistCustomSigns();
+    dropMediaCache(name);
+    try { await mediaDelete(name); } catch(e){}
+    shownRefName = undefined;
+    resetCustomLabelBuffer();
+    renderCustomSignsList();
+    notifySignsChanged();
+  }
+
+  signModalBody.appendChild(teachCard);   // القسم القديم اتنقل جوّه اللوحة بكل وظايفه
+  function openSignModal(){
+    signModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    syncTeachPreview();
+  }
+  function closeSignModal(){
+    if (teachBusy) cancelTeaching('اتلغى التسجيل.');
+    signModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('openSignModalBtn').addEventListener('click', openSignModal);
+  document.getElementById('openSignModalBtn2').addEventListener('click', openSignModal);
+  signModalClose.addEventListener('click', closeSignModal);
+  signModal.addEventListener('click', (e) => { if (e.target === signModal) closeSignModal(); });
+  modalCamBtn.addEventListener('click', () => { if (!camera) startCamera(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && signModal.classList.contains('active') && !lightbox.classList.contains('active')) closeSignModal(); });
+
+  // ---------- MediaPipe drawing ----------
+  const HAND_CONNECTIONS = window.HAND_CONNECTIONS;
+
+  function resizeCanvasToVideo(){
+    const w = video.videoWidth || 480;
+    const h = video.videoHeight || 640;
+    if (overlay.width !== w) overlay.width = w;
+    if (overlay.height !== h) overlay.height = h;
+  }
+
+  // ---------- Sentence buffer ----------
+  const words = [];
+
+  function renderSentence(){
+    sentenceBox.innerHTML = words
+      .map(w => '<span class="word-chip">' + w + '</span>')
+      .join(' ');
+    sentenceBox.scrollTop = sentenceBox.scrollHeight;
+  }
+
+  function commitWord(label){
+    words.push(label);
+    renderSentence();
+    translationDisplay.classList.add('committed');
+    setTimeout(() => translationDisplay.classList.remove('committed'), 260);
+  }
+
+  // تُعيد حالة الاعتماد: 'commit' (يمكن الإضافة الآن), 'duplicate' (نفس الكلمة السابقة
+  // بالضبط - محظورة حتى تتغيّر الإشارة), أو 'cooldown' (لا يزال يجب الانتظار)
+  function getCommitStatus(label, now){
+    if (label === lastCommitted) return 'duplicate';
+    if (now - lastCommitTime < COOLDOWN_MS) return 'cooldown';
+    return 'commit';
+  }
+
+  function maybeAutoCommit(label, now){
+    if (!autoToggle.checked) return 'off';
+
+    const status = getCommitStatus(label, now);
+    if (status === 'commit'){
+      commitWord(label);
+      lastCommitted = label;
+      lastCommitTime = now;
+    }
+    return status;
+  }
+
+  // ---------- تطبيق نتيجة إشارة واحدة (تحديث العرض + منطق الثبات والاعتماد) ----------
+  function applyGestureResult(gesture, hasStableInput, now){
+    // لو الإشارة المتعرَّف عليها متعلَّمة ولها صورة/فيديو → نعرضها كمرجع بصري تحت الترجمة
+    showReferenceFor((hasStableInput && gesture && gesture.custom) ? gesture.label : null);
+
+    if (!hasStableInput){
+      holdGesture = null;
+      holdFill.style.width = '0%';
+      holdFill.classList.remove('ready', 'blocked');
+      translationDisplay.textContent = '—';
+      translationSub.textContent = 'ثبّت يدك قليلاً…';
+      return;
+    }
+
+    if (gesture){
+      // تحديث فوري ومستمر للعرض الحي (بدون انتظار)
+      translationDisplay.textContent = gesture.label;
+
+      // قياس ثبات الإشارة لأغراض التجميع الذكي في الجملة
+      if (gesture.label !== holdGesture){
+        holdGesture = gesture.label;
+        holdStartTime = now;
+      }
+
+      const holdDuration = now - holdStartTime;
+      const progress = Math.min(holdDuration / HOLD_MS, 1);
+      holdFill.style.width = (progress * 100).toFixed(0) + '%';
+
+      if (progress >= 1){
+        const status = maybeAutoCommit(gesture.label, now);
+        holdFill.classList.remove('ready', 'blocked');
+
+        if (status === 'commit'){
+          holdFill.classList.add('ready');
+          translationSub.textContent = '✓ تمت إضافة "' + gesture.label + '" إلى الجملة';
+        } else if (status === 'duplicate'){
+          holdFill.classList.add('blocked');
+          translationSub.textContent = gesture.sub + ' — بدّل الإشارة لإضافة كلمة جديدة';
+        } else if (status === 'cooldown'){
+          holdFill.classList.add('blocked');
+          const remaining = Math.max(0, Math.ceil((COOLDOWN_MS - (now - lastCommitTime)) / 100) / 10);
+          translationSub.textContent = 'انتظر ' + remaining.toFixed(1) + ' ث قبل الكلمة التالية';
+        } else {
+          translationSub.textContent = gesture.sub;
+        }
+      } else {
+        holdFill.classList.remove('ready', 'blocked');
+        translationSub.textContent = gesture.sub;
+      }
+
+    } else {
+      // شكل يد مستقر لكنه غير مُعرّف في أي قاموس — لا يوجد أي مطابقة له حالياً
+      holdGesture = null;
+      holdFill.style.width = '0%';
+      holdFill.classList.remove('ready', 'blocked');
+      translationDisplay.textContent = '—';
+      translationSub.textContent = 'إشارة غير معروفة — علّمها من قسم "علّم الكاميرا إشارة جديدة"';
+    }
+  }
+
+  // ---------- Frame results handler ----------
+  function onResults(results){
+    resizeCanvasToVideo();
+    ctx.save();
+    ctx.clearRect(0, 0, overlay.width, overlay.height);
+
+    const hands = results.multiHandLandmarks || [];
+    handCountEl.textContent = hands.length + (hands.length === 1 ? ' يد مكتشفة' : ' أيدٍ مكتشفة');
+    teachHandBadge.textContent = handCountEl.textContent;
+    if (hands.length !== 1 || recordingSign || teachBusy) teachLive.textContent = recordingSign ? '🎓 جارٍ التسجيل…' : '—';
+
+    const now = performance.now();
+
+    hands.forEach(lm => {
+      if (window.drawConnectors && HAND_CONNECTIONS){
+        window.drawConnectors(ctx, lm, HAND_CONNECTIONS, { color: '#2dd4bf', lineWidth: 3 });
+      }
+      if (window.drawLandmarks){
+        window.drawLandmarks(ctx, lm, { color: '#f2b544', lineWidth: 1, radius: 3 });
+      }
+    });
+
+    if (recordingSign || teachBusy){
+      // ---------- وضع تعليم إشارة جديدة (عدّ تنازلي / تجميع بصمات / التقاط وسائط) ----------
+      // الترجمة الحيّة بتتوقف مؤقتاً هنا عشان ما تضيفش كلمات للجملة بالغلط أثناء التجهيز
+      showReferenceFor(null);
+      resetStateBuffer();
+      resetCountBuffer();
+      holdGesture = null;
+      holdFill.style.width = '0%';
+      holdFill.classList.remove('ready', 'blocked');
+
+      if (hands.length === 0){
+        statusDot.className = 'status-dot warn';
+        statusText.textContent = 'لا توجد يد في الإطار';
+        liveDot.style.display = 'none';
+        translationDisplay.textContent = '—';
+        translationSub.textContent = 'وجّه يدك للكاميرا أثناء التسجيل';
+        if (recordingSign) teachStatus.textContent = 'ما فيش يد في الإطار — وجّه يدك للكاميرا وثبّتها.';
+      } else {
+        statusDot.className = 'status-dot on';
+        statusText.textContent = 'جارٍ التعرّف';
+        liveDot.style.display = 'inline-block';
+        translationDisplay.textContent = '🎓';
+
+        if (recordingSign){
+          recordingSign.frames.push(landmarksToVector(hands[0]));
+          const n = recordingSign.frames.length;
+          const alreadyHasMedia = customSigns[recordingSign.name] && customSigns[recordingSign.name].media;
+          if (recordingSign.snapPromise === null && n >= Math.ceil(RECORD_FRAMES / 2) &&
+              autoSnapToggle.checked && !pendingMedia && !alreadyHasMedia){
+            recordingSign.snapPromise = captureSnapshotBlob();
+          }
+          translationSub.textContent = 'ثبّت يدك… ' + n + '/' + RECORD_FRAMES;
+          teachStatus.textContent = 'جارٍ التسجيل… ' + n + '/' + RECORD_FRAMES;
+          if (n >= RECORD_FRAMES) finishRecording();
+        } else {
+          translationSub.textContent = 'استعد… الالتقاط هيبدأ بعد العدّ التنازلي';
+        }
+      }
+
+    } else if (hands.length === 2){
+      // ---------- وضعية إيدين: عدّ إجمالي الأصابع المفرودة (٠ إلى ١٠) ----------
+      statusDot.className = 'status-dot on';
+      statusText.textContent = 'جارٍ عدّ الأرقام بإيدين';
+      liveDot.style.display = 'inline-block';
+      resetStateBuffer();
+      resetCustomLabelBuffer();
+
+      const totalRaw = countExtendedFingers(hands[0]) + countExtendedFingers(hands[1]);
+      const stableTotal = getStableCount(totalRaw);
+      const gesture = (stableTotal !== null)
+        ? { label: ARABIC_DIGITS[stableTotal] + ' / ' + NUMBER_WORDS[stableTotal], sub: 'عدّ أصابع اليدين' }
+        : null;
+
+      applyGestureResult(gesture, stableTotal !== null, now);
+
+    } else if (hands.length === 1){
+      statusDot.className = 'status-dot on';
+      statusText.textContent = 'جارٍ التعرّف';
+      liveDot.style.display = 'inline-block';
+      resetCountBuffer();
+
+      const lm = hands[0];
+
+      const rawStates = getFingerStates(lm);
+      const stableStates = getStableStates(rawStates);
+      const staticMatch = stableStates ? matchGesture(stableStates) : null;
+
+      const rawCustomName = nearestCustomSign(lm);
+      const stableCustomName = getStableCustomLabel(rawCustomName);
+      const customMatch = stableCustomName
+        ? { label: stableCustomName, sub: 'إشارة مخصّصة علّمتها للتطبيق', custom: true }
+        : null;
+
+      // نُعطي الأولوية للإشارة المخصّصة اللي علّمها المستخدم بنفسه، لأنها أدق للشكل الفعلي ليده
+      const gesture = customMatch || staticMatch;
+      if (signModal.classList.contains('active')) teachLive.textContent = gesture ? '✅ ' + gesture.label : 'لا يوجد تطابق';
+      // التعرّف على الإشارات المتعلَّمة مستقل عن ثبات حالة الأصابع (مفرود/مطوي): كفاية إن البصمة نفسها ثابتة
+      applyGestureResult(gesture, !!stableStates || !!customMatch, now);
+
+    } else {
+      statusDot.className = 'status-dot warn';
+      statusText.textContent = 'لا توجد يد في الإطار';
+      liveDot.style.display = 'none';
+      holdGesture = null;
+      showReferenceFor(null);
+      resetStateBuffer();
+      resetCustomLabelBuffer();
+      resetCountBuffer();
+      holdFill.style.width = '0%';
+      holdFill.classList.remove('ready', 'blocked');
+      translationDisplay.textContent = '—';
+      translationSub.textContent = 'وجّه يدك أمام الكاميرا';
+    }
+
+    ctx.restore();
+  }
+
+
+  // ---------- Camera lifecycle ----------
+  async function startCamera(){
+    startBtn.disabled = true;
+    startBtn.textContent = 'جارٍ التشغيل…';
+
+    try {
+      handsModel = new Hands({
+        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+      });
+
+      handsModel.setOptions({
+        maxNumHands: 2,
+        modelComplexity: 1,          // نموذج أدق (بدلاً من الأخف) لتقليل أخطاء تموضع نقاط الأصابع
+        minDetectionConfidence: 0.85, // لا نعتمد اليد إلا عند ثقة عالية جداً في اكتشافها
+        minTrackingConfidence: 0.8,   // ولا نواصل تتبعها إلا بثقة عالية أيضاً بين الإطارات
+        selfieMode: true
+      });
+
+      handsModel.onResults(onResults);
+
+      camera = new Camera(video, {
+        onFrame: async () => {
+          if (handsModel){
+            await handsModel.send({ image: video });
+          }
+        },
+        width: 400,
+        height: 520,
+        facingMode: 'user'
+      });
+
+      await camera.start();
+      syncTeachPreview();
+
+      placeholder.classList.add('hidden');
+      stopBtn.disabled = false;
+      statusText.textContent = 'جارٍ التعرّف';
+      statusDot.className = 'status-dot on';
+
+    } catch (err){
+      console.error(err);
+      placeholder.classList.remove('hidden');
+      startBtn.disabled = false;
+      startBtn.textContent = 'تشغيل الكاميرا';
+      statusText.textContent = 'تعذّر الوصول إلى الكاميرا';
+      statusDot.className = 'status-dot';
+      alert('تعذّر تشغيل الكاميرا. تأكد من منح الإذن للمتصفح وأنك تستخدم اتصال HTTPS (أو localhost).');
+    }
+  }
+
+  function stopCamera(){
+    if (camera){
+      try { camera.stop(); } catch(e){}
+      camera = null;
+    }
+    if (video.srcObject){
+      video.srcObject.getTracks().forEach(t => t.stop());
+      video.srcObject = null;
+    }
+
+    cancelTeaching();      // لو كان في تسجيل/عدّ تنازلي شغّال نلغيه بدل ما يفضل معلّق
+    syncTeachPreview();
+    showReferenceFor(null);
+
+    ctx.clearRect(0, 0, overlay.width, overlay.height);
+    placeholder.classList.remove('hidden');
+    startBtn.disabled = false;
+    startBtn.textContent = 'تشغيل الكاميرا';
+    stopBtn.disabled = true;
+    statusText.textContent = 'الكاميرا متوقفة';
+    statusDot.className = 'status-dot';
+    liveDot.style.display = 'none';
+    handCountEl.textContent = '0 يد مكتشفة';
+    resetStateBuffer();
+    translationSub.textContent = 'وجّه يدك أمام الكاميرا';
+    holdFill.style.width = '0%';
+    holdFill.classList.remove('ready', 'blocked');
+    holdGesture = null;
+  }
+
+  startBtn.addEventListener('click', startCamera);
+  stopBtn.addEventListener('click', stopCamera);
+
+  autoToggle.addEventListener('change', () => {
+    autoModeLabel.textContent = autoToggle.checked ? 'تلقائي' : 'يدوي';
+  });
+
+  // ---------- Speech synthesis ----------
+  function speak(text){
+    if (!text || text === '—') return;
+    if (!('speechSynthesis' in window)){
+      alert('متصفحك لا يدعم خاصية النطق الصوتي.');
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'ar-SA';
+    utter.rate = 0.95;
+    utter.pitch = 1;
+
+    const voices = window.speechSynthesis.getVoices();
+    const arabicVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ar'));
+    if (arabicVoice) utter.voice = arabicVoice;
+
+    window.speechSynthesis.speak(utter);
+  }
+
+  speakCurrentBtn.addEventListener('click', () => {
+    speak(translationDisplay.textContent.trim());
+  });
+
+  addToSentenceBtn.addEventListener('click', () => {
+    const w = translationDisplay.textContent.trim();
+    if (w && w !== '—'){
+      commitWord(w);
+      lastCommitted = w;
+      lastCommitTime = performance.now();
+    }
+  });
+
+  clearSentenceBtn.addEventListener('click', () => {
+    words.length = 0;
+    renderSentence();
+    lastCommitted = null;
+  });
+
+  speakSentenceBtn.addEventListener('click', () => {
+    speak(words.join(' '));
+  });
+
+  // تحميل الأصوات مبكراً (بعض المتصفحات تحتاج لذلك)
+  if ('speechSynthesis' in window){
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+  }
+
+  // ---------- Init: تحميل الإشارات المخصّصة المحفوظة وعرضها ----------
+  loadCustomSigns();
+  loadThreshold();
+  renderCustomSignsList();
+  renderPending();
+  syncTeachPreview();
+
+  // ---------- جسر بسيط لوحدة Firebase (module script) في أسفل الصفحة ----------
+  // نوفّر دوال للقراءة/المسح حتى تتمكن وحدة Firebase من التعامل مع الجملة
+  // الحالية دون كسر النطاق الخاص بهذا الـ IIFE.
+  window.signApp = {
+    getSentenceText: () => words.join(' '),
+    getWords: () => words.slice(),
+    isSentenceEmpty: () => words.length === 0,
+    addGesture: addGesture,
+    // جسر للدليل/نص←إشارة: أسماء الإشارات المتعلَّمة + وسائطها (لو موجودة) بالاسم
+    getTaughtNames: () => Object.keys(customSigns),
+    getSyncSigns: () => {
+      const o = {};
+      Object.keys(customSigns).forEach(n => {
+        const g = customSigns[n];
+        o[n] = { samples: g.samples, lang: g.lang || DEFAULT_LANG, updated: g.updated || 0, media: g.media === 'image' ? 'image' : null };
+      });
+      return o;
+    },
+    getSignThumb: getSignThumbData,
+    applyRemote: applyRemoteSign,
+    removeLocal: removeLocalSign,
+    findSignMedia: async (word) => {
+      const key = normalizeSignKey(word);
+      if (!key) return null;
+      const name = Object.keys(customSigns).find(n => customSigns[n].media && normalizeSignKey(n) === key);
+      if (!name) return null;
+      const entry = await getSignMedia(name);
+      return entry ? { name: name, url: entry.url, kind: entry.kind } : null;
+    }
+  };
+
+})();
+</script>
+
+<!-- ========================================================= -->
+<!-- التنقّل بين الأقسام + القاموس الشامل + المفضلة + النص←إشارة -->
+<!-- ========================================================= -->
+<script>
+(function(){
+  "use strict";
+
+  // ---------- Tab navigation ----------
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const views   = document.querySelectorAll('.view');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      views.forEach(v => v.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.view).classList.add('active');
+    });
+  });
+
+  // ---------- Icon helper ----------
+  const ICONS = {
+    default: '<svg viewBox="0 0 24 24" fill="none"><path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10 11V5a1.5 1.5 0 0 1 3 0v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M13 11V6a1.5 1.5 0 0 1 3 0v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 12.5v-2a1.5 1.5 0 0 1 3 0V15c0 3.5-2.5 6-6.2 6-2 0-3.4-.7-4.6-2.1L4.6 14.7c-.6-.7-.5-1.7.2-2.2.6-.5 1.5-.4 2 .2L8.5 14.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    color: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.2" opacity="0.5"/></svg>',
+    number: '<svg viewBox="0 0 24 24" fill="none"><path d="M6 4v16M10 4v16M6 9h4M6 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    day: '<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    greeting: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-4.5-2-8-5.7-8-9.8C4 7.5 6.8 5 10 5c1 0 1.9.3 2 1 .1-.7 1-1 2-1 3.2 0 6 2.5 6 6.2 0 4.1-3.5 7.8-8 9.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+    health: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    animal: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="14.5" r="4.2" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="7.5" r="1.7" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="7.5" r="1.7" stroke="currentColor" stroke-width="1.4"/><circle cx="7.7" cy="11.8" r="1.5" stroke="currentColor" stroke-width="1.3"/><circle cx="16.3" cy="11.8" r="1.5" stroke="currentColor" stroke-width="1.3"/></svg>',
+    food: '<svg viewBox="0 0 24 24" fill="none"><path d="M6.5 2.5v7M4.5 2.5v4.2a2 2 0 0 0 4 0V2.5M6.5 9.5v12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M17.5 2.5c-2 0-3.2 1.9-3.2 4.6 0 2.4 1 3.9 2.5 4.3v10.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    weather: '<svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="7.5" r="2.6" stroke="currentColor" stroke-width="1.3"/><path d="M8 2.8v1.3M8 11v1.3M3.3 7.5h1.3M11.4 7.5h1.3M4.9 4.4l.9.9M10.2 4.4l-.9.9" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M9.5 19a4.3 4.3 0 0 1-.4-8.6 5.4 5.4 0 0 1 10.2 1.9A3.7 3.7 0 0 1 18.5 19H9.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+    place: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="9.3" r="2.3" stroke="currentColor" stroke-width="1.4"/></svg>',
+    family: '<svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="7" r="2.4" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="7.5" r="2" stroke="currentColor" stroke-width="1.3"/><path d="M3.5 20c0-3.3 2.3-5.6 5-5.6s5 2.3 5 5.6M13.8 20c0-2.6 1.7-4.6 3.9-4.6s3.8 2 3.8 4.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+    command: '<svg viewBox="0 0 24 24" fill="none"><path d="M9 11.5V5.8a1.6 1.6 0 0 1 3.2 0v4.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.2 10.4V4.8a1.6 1.6 0 0 1 3.2 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.4 11v-3a1.6 1.6 0 0 1 3.2 0v6.3c0 3.7-2.6 6.4-6.5 6.4-2.1 0-3.6-.8-4.9-2.3l-3-3.5c-.6-.7-.5-1.8.3-2.4.7-.5 1.6-.4 2.2.3l1.9 2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  };
+
+  // ---------- مولّدات إدخالات تلقائية لتقليل التكرار ----------
+  function autoWord(word, icon, sub){
+    return { word: word, sub: sub || ('إشارة قاموسية خاصة بكلمة "' + word + '"'), icon: icon || 'default' };
+  }
+  function autoLetter(letter){
+    return { word: letter, sub: 'تهجئة إصبعية لحرف "' + letter + '"', icon: 'default' };
+  }
+
+  const ARABIC_LETTERS = ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه','و','ي'];
+  const EXTRA_LETTER_FORMS = ['ء','ة','لا','آ','إ','ؤ','ئ'];
+
+  const VERBS = ['يذهب','يأتي','يأكل','يشرب','ينام','يستيقظ','يلعب','يعمل','يدرس','يقرأ','يكتب','يتكلم','يسمع','يرى','يشم','يلمس','يحب','يكره','يريد','يحتاج','يعرف','يفهم','يتذكر','ينسى','يساعد','يعطي','يأخذ','يشتري','يبيع','يفتح','يغلق','يبدأ','ينتهي','يجلس','يقف','يمشي','يجري','يسافر','يرجع','يزور','يطبخ','يغسل','يلبس','يضحك','يبكي','يصلي','يصوم','يفكر','يخطط','يقرر','يشرح','يسأل','يجاوب','يشارك','يتعلم','يعلّم','يصلح','يكسر','يبني','يهدم','يزرع','يحصد','يقود','يركب','ينزل','يصعد','ينظف','يرتب','ينتظر','يبحث','يجد','يفقد','يحمل','يرمي'];
+
+  const COMMON_NOUNS = ['طعام','ماء','خبز','لبن','شاي','قهوة','كتاب','قلم','هاتف','حاسوب','تلفاز','حقيبة','ملابس','نقود','وقت','يوم','شهر','سنة','مفتاح','باب','نافذة','طاولة','كرسي','سرير','شمس','قمر','نجمة','سيارة','طائرة','قطار'];
+
+  const PLACES = ['بيت','مدرسة','جامعة','مستشفى','مسجد','كنيسة','شارع','سوق','مطعم','فندق','حديقة','مطار','محطة','مكتبة','صيدلية','بنك','بريد','ملعب','مصنع','شركة','قصر','مزرعة','شاطئ','جبل','صحراء','غابة','نادي','مقهى','صالة رياضية','متحف','سينما','مسرح'];
+
+  const FAMILY = ['أب','أم','أخ','أخت','جد','جدة','عم','عمة','خال','خالة','ابن','ابنة','زوج','زوجة','صديق','صديقة','توأم','حفيد','حفيدة','عائلة','أقارب'];
+
+  const ADJECTIVES = ['كبير','صغير','طويل','قصير','جميل','قبيح','سريع','بطيء','سعيد','حزين','غاضب','خائف','متعب','نشيط','جائع','شبعان','عطشان','بارد','حار','جديد','قديم','نظيف','متسخ','سهل','صعب','قريب','بعيد','كثير','قليل','غالي','رخيص','قوي','ضعيف'];
+
+  const QUESTION_WORDS = ['ماذا','من','متى','أين','كيف','لماذا','كم','هل','أي','بكم'];
+
+  const EMOTIONS = ['فرح','حزن','غضب','خوف','قلق','راحة','حب','كره','دهشة','أمل','يأس','فخر','سعادة','توتر','ملل','حماس','غيرة','ندم','ثقة','ارتباك','امتنان','وحدة'];
+
+  // ---------- أعداد وأرقام موسّعة ----------
+  const NUMBERS_TEENS   = ['أحد عشر','اثنا عشر','ثلاثة عشر','أربعة عشر','خمسة عشر','ستة عشر','سبعة عشر','ثمانية عشر','تسعة عشر'];
+  const NUMBERS_TENS    = ['عشرون','ثلاثون','أربعون','خمسون','ستون','سبعون','ثمانون','تسعون'];
+  const NUMBERS_HUNDREDS= ['مئة','مئتان','ثلاثمئة','أربعمئة','خمسمئة','ستمئة','سبعمئة','ثمانمئة','تسعمئة'];
+  const NUMBERS_BIG     = ['ألف','ألفان','مليون','مليار'];
+  const ORDINALS        = ['أول','ثاني','ثالث','رابع','خامس','سادس','سابع','ثامن','تاسع','عاشر'];
+
+  // ---------- تصنيفات إضافية شاملة ----------
+  const COLORS_EXTRA   = ['بنفسجي','وردي','برتقالي','ذهبي','فضي','بيج','فيروزي','كحلي','عنابي'];
+  const TIME_WORDS     = ['اليوم','أمس','غداً','الأسبوع','الشهر','الآن','بعد قليل','متأخر','مبكر','دائماً','أحياناً','أبداً'];
+  const GREETINGS_EXTRA= ['أهلاً وسهلاً','تشرفنا','كيف حالك','الحمد لله','بخير','تصبح على خير','مبروك','بالتوفيق','في أمان الله','حياك الله'];
+  const COMPLIMENTS    = ['ما شاء الله','رائع','ممتاز','أحسنت','بارك الله فيك','جميل جداً','عمل رائع','فخور بك','موهوب','ذكي جداً'];
+  const RESPONSES      = ['نعم','لا','ربما','أكيد','بالتأكيد','لا أعرف','حسناً','موافق','غير موافق','ممكن','مستحيل','بالطبع','لا مانع'];
+  const SERVICES       = ['مساعدة','معلومات','حجز','دفع','استفسار','شكوى','دعم فني','توصيل','صيانة','استقبال','فاتورة','إيصال'];
+  const HEALTH         = ['مريض','طبيب','ممرضة','دواء','ألم','حمى','صداع','إسعاف','صحة جيدة','تحليل','عملية','حساسية','لقاح','جرح','كسر','سعال','دوخة','راحة تامة'];
+  const COMMANDS       = ['قف','اجلس','تعال','اذهب','انتظر','اسكت','انظر','استمع','افتح','أغلق','ابدأ','توقف','أسرع','تمهل','انتبه','كرر'];
+  const APOLOGY        = ['أعتذر','سامحني','المعذرة','لم أقصد','خطئي','غلطتي','عذراً','أرجو المعذرة'];
+  const ANIMALS        = ['قطة','كلب','أسد','نمر','فيل','حصان','جمل','بقرة','خروف','ماعز','دجاجة','ديك','بطة','حمامة','عصفور','سمكة','أرنب','ثعلب','ذئب','قرد','فأر','ثعبان','سلحفاة','نحلة','فراشة','نملة','دب','زرافة','بجعة'];
+  const BODY_PARTS     = ['رأس','وجه','عين','أذن','أنف','فم','شفة','أسنان','لسان','رقبة','كتف','ذراع','يد','إصبع','ظهر','صدر','بطن','رجل','قدم','ركبة','شعر','قلب','معدة','جلد','حاجب'];
+  const FOOD_DRINK     = ['أرز','لحم','دجاج','سمك','خضار','فواكه','تفاح','موز','برتقال','عصير','حليب','جبن','بيض','سكر','ملح','فلفل','عسل','تمر','شوربة','سلطة','بيتزا','برجر','مكرونة','فطور','غداء','عشاء'];
+  const WEATHER_LOCATION = ['مطر','رياح','غيوم','عاصفة','ثلج','رطب','جاف','شمال','جنوب','شرق','غرب','هنا','هناك','فوق','تحت','يمين','يسار','أمام','خلف','بجانب','وسط'];
+
+  // ---------- جولة ثانية: توسيع شامل لكل تصنيف بلا استثناء ----------
+  const ONES_FOR_COMPOUND = ['واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة'];
+  const NUMBERS_COMPOUND = []; // كل الأعداد المركّبة من 21 إلى 99 (مثال: "خمسة وثلاثون")
+  NUMBERS_TENS.forEach(tenWord => {
+    ONES_FOR_COMPOUND.forEach(oneWord => {
+      NUMBERS_COMPOUND.push(oneWord + ' و' + tenWord);
+    });
+  });
+
+  const COLORS_EXTRA2    = ['سماوي','ليموني','زيتي','خمري','نحاسي','فاتح','غامق'];
+  const TIME_WORDS2      = ['بعد غد','أول أمس','الليلة','هذا الصباح','هذا المساء','كل يوم','من وقت لآخر','قريباً'];
+  const GREETINGS_EXTRA2 = ['يسعدني لقاؤك','نورت','تسلم','الله يسلمك','كل عام وأنتم بخير'];
+  const COMPLIMENTS2     = ['متميز','مبدع','يستحق الثناء','عمل يستحق الإعجاب','أنت الأفضل'];
+  const RESPONSES2       = ['اتفقنا','بكل سرور','لا يهم','بالفعل','صحيح','خطأ','بصراحة'];
+  const SERVICES2        = ['ضمان','استرجاع','تخفيض','عرض خاص','موعد','طابور','رقم الطلب'];
+  const HEALTH2          = ['ضغط الدم','سكري','قياس الحرارة','فحص طبي','تعافي','وصفة طبية'];
+  const COMMANDS2        = ['اطلب المساعدة','احذر','لا تلمس','اقترب','ابتعد','اسمع جيداً'];
+  const APOLOGY2         = ['لن يتكرر','أرجو قبول اعتذاري','كان خطأ غير مقصود'];
+  const ANIMALS2         = ['حمار','بغل','ديناصور','قرش','دولفين','نسر','بومة','خفاش','تمساح','فهد'];
+  const BODY_PARTS2      = ['كاحل','مرفق','خصر','حنجرة','رئة','كبد','كلية','عضلة','عظم','أظافر'];
+  const FOOD_DRINK2      = ['زيت','خل','ثوم','بصل','بطاطس','طماطم','خيار','ليمون','كرز','عنب','بطيخ','مانجو','شوكولاتة','آيس كريم','مياه غازية'];
+  const WEATHER_LOCATION2= ['طقس مشمس','طقس غائم','درجة الحرارة','خريطة','عنوان','موقعي الحالي','بعيد عن هنا'];
+  const PLACES_EXTRA2    = ['محكمة','سفارة','مركز شرطة','دار للمسنين','روضة أطفال','مصلحة حكومية'];
+  const FAMILY_EXTRA2    = ['زوج الأم','زوجة الأب','ابن العم الثاني','ابنة الخالة'];
+  const VERBS_EXTRA2     = ['يسافر جواً','يصل','يغادر','يوقف','يشغل','يطفئ','يتصل','يرد','يرسل','يستقبل'];
+  const ADJECTIVES_EXTRA2= ['مشغول','فارغ','مفتوح','مغلق','آمن','خطير','هادئ','صاخب','واضح','غامض'];
+  const QUESTION_WORDS_EXTRA2 = ['أيهما','منذ متى'];
+  const EMOTIONS_EXTRA2  = ['إحباط','ارتياح','اشتياق','رضا','استغراب','تعاطف','خجل','ثقة بالنفس'];
+
+  // ---------- Default comprehensive dictionary (categorized) ----------
+  const DEFAULT_DICTIONARY = {
+    "التحيات": [
+      { word: "مرحباً", sub: "كف مفتوح يتحرك للأمام بلطف", icon: "greeting" },
+      { word: "السلام عليكم", sub: "اليد ترفع بجانب الجبهة ثم تنزل", icon: "greeting" },
+      { word: "صباح الخير", sub: "اليد تتحرك من أسفل لأعلى كشروق الشمس", icon: "greeting" },
+      { word: "مساء الخير", sub: "اليد تتحرك من أعلى لأسفل كغروب الشمس", icon: "greeting" },
+      { word: "مع السلامة", sub: "تلويح اليد للوداع", icon: "greeting" },
+      { word: "شكراً", sub: "أطراف الأصابع تلمس الذقن ثم تتحرك للأمام", icon: "greeting" },
+      { word: "عفواً", sub: "اليد تدور فوق الصدر بشكل دائري", icon: "greeting" },
+      { word: "آسف", sub: "قبضة اليد تدور فوق الصدر", icon: "greeting" },
+      { word: "خير", sub: "جزء من تحية 'صباح/مساء الخير' — راحة اليد تتحرك للأعلى بثبات", icon: "greeting" },
+      ...GREETINGS_EXTRA.map(w => autoWord(w, 'greeting')),
+      ...GREETINGS_EXTRA2.map(w => autoWord(w, 'greeting'))
+    ],
+    "الألوان": [
+      { word: "أحمر", sub: "إصبع السبابة يلمس الشفة السفلى مرتين", icon: "color" },
+      { word: "أزرق", sub: "حرف B يهتز جانبياً أمام الجسم", icon: "color" },
+      { word: "أخضر", sub: "حرف G يهتز جانبياً أمام الجسم", icon: "color" },
+      { word: "أصفر", sub: "حرف Y يهتز جانبياً أمام الجسم", icon: "color" },
+      { word: "أسود", sub: "إصبع السبابة يمرّ فوق الحاجب", icon: "color" },
+      { word: "أبيض", sub: "اليد تلمس الصدر ثم تُسحب للأمام مع فرد الأصابع", icon: "color" },
+      { word: "بني", sub: "حرف B ينزلق على الخد", icon: "color" },
+      { word: "رمادي", sub: "الأصابع المتشابكة تتحرك للأمام وللخلف", icon: "color" },
+      ...COLORS_EXTRA.map(w => autoWord(w, 'color')),
+      ...COLORS_EXTRA2.map(w => autoWord(w, 'color'))
+    ],
+    "الأرقام": [
+      { word: "صفر", sub: "أصابع اليد مضمومة على شكل دائرة", icon: "number" },
+      { word: "واحد", sub: "إصبع السبابة فقط مرفوع", icon: "number" },
+      { word: "اثنان", sub: "السبابة والوسطى مرفوعتان", icon: "number" },
+      { word: "ثلاثة", sub: "ثلاث أصابع مفرودة", icon: "number" },
+      { word: "أربعة", sub: "أربع أصابع مفرودة والإبهام مطوي", icon: "number" },
+      { word: "خمسة", sub: "كف مفتوح بالكامل بخمس أصابع", icon: "number" },
+      { word: "ستة", sub: "الإبهام والخنصر يتلامسان مع فرد الباقي", icon: "number" },
+      { word: "سبعة", sub: "الإبهام والبنصر يتلامسان مع فرد الباقي", icon: "number" },
+      { word: "ثمانية", sub: "الإبهام والوسطى يتلامسان مع فرد الباقي", icon: "number" },
+      { word: "تسعة", sub: "الإبهام والسبابة يتلامسان مع فرد الباقي", icon: "number" },
+      { word: "عشرة", sub: "قبضة اليد تهتز للأمام وللخلف", icon: "number" },
+      ...NUMBERS_TEENS.map(w => autoWord(w, 'number', 'عدد مركّب من 11 إلى 19 — إشارة "عشرة" متبوعة بإشارة الآحاد')),
+      ...NUMBERS_TENS.map(w => autoWord(w, 'number', 'عدد عشرات — إشارة الرقم مع حركة جانبية مزدوجة')),
+      ...NUMBERS_COMPOUND.map(w => autoWord(w, 'number', 'عدد مركّب من 21 إلى 99 — إشارة الآحاد ثم إشارة العشرات')),
+      ...NUMBERS_HUNDREDS.map(w => autoWord(w, 'number', 'عدد مئات — إشارة الرقم متبوعة بإشارة "مئة"')),
+      ...NUMBERS_BIG.map(w => autoWord(w, 'number')),
+      ...ORDINALS.map(w => autoWord(w, 'number', 'عدد ترتيبي: "' + w + '"'))
+    ],
+    "أيام الأسبوع": [
+      { word: "الأحد", sub: "حرف A يدور أمام الجسم", icon: "day" },
+      { word: "الإثنين", sub: "حرف M يدور أمام الجسم", icon: "day" },
+      { word: "الثلاثاء", sub: "حرف T يدور أمام الجسم", icon: "day" },
+      { word: "الأربعاء", sub: "حرف W يدور أمام الجسم", icon: "day" },
+      { word: "الخميس", sub: "حرف H يدور أمام الجسم", icon: "day" },
+      { word: "الجمعة", sub: "حرف F يدور أمام الجسم", icon: "day" },
+      { word: "السبت", sub: "حرف S يدور أمام الجسم", icon: "day" }
+    ],
+    "الوقت": TIME_WORDS.concat(TIME_WORDS2).map(w => autoWord(w, 'day')),
+    "الحروف": ARABIC_LETTERS.map(autoLetter).concat(EXTRA_LETTER_FORMS.map(autoLetter)),
+    "الأفعال": VERBS.concat(VERBS_EXTRA2).map(w => autoWord(w)),
+    "أسماء شائعة": COMMON_NOUNS.map(w => autoWord(w)),
+    "الأماكن": PLACES.concat(PLACES_EXTRA2).map(w => autoWord(w, 'place')),
+    "الأسرة": FAMILY.concat(FAMILY_EXTRA2).map(w => autoWord(w, 'family')),
+    "الصفات": ADJECTIVES.concat(ADJECTIVES_EXTRA2).map(w => autoWord(w)),
+    "الأسئلة": QUESTION_WORDS.concat(QUESTION_WORDS_EXTRA2).map(w => autoWord(w)),
+    "المشاعر": EMOTIONS.concat(EMOTIONS_EXTRA2).map(w => autoWord(w, 'greeting')),
+    "المجاملات": COMPLIMENTS.concat(COMPLIMENTS2).map(w => autoWord(w, 'greeting')),
+    "الردود": RESPONSES.concat(RESPONSES2).map(w => autoWord(w)),
+    "الخدمات": SERVICES.concat(SERVICES2).map(w => autoWord(w)),
+    "الصحة": HEALTH.concat(HEALTH2).map(w => autoWord(w, 'health')),
+    "الأوامر": COMMANDS.concat(COMMANDS2).map(w => autoWord(w, 'command')),
+    "الاعتذار": APOLOGY.concat(APOLOGY2).map(w => autoWord(w, 'greeting')),
+    "الحيوانات": ANIMALS.concat(ANIMALS2).map(w => autoWord(w, 'animal')),
+    "أعضاء الجسم": BODY_PARTS.concat(BODY_PARTS2).map(w => autoWord(w)),
+    "الأكل والشرب": FOOD_DRINK.concat(FOOD_DRINK2).map(w => autoWord(w, 'food')),
+    "الطقس والموقع": WEATHER_LOCATION.concat(WEATHER_LOCATION2).map(w => autoWord(w, 'weather')),
+    "عبارات من الصور المرفوعة": [
+      { word: "أحبك", sub: "الإبهام والسبابة والخنصر مفرودة (حرف I-L-Y)", icon: "greeting" },
+      { word: "أنا أحبك", sub: "اليدان تتشابكان معاً على الصدر", icon: "greeting" },
+      { word: "حقاً أحبك", sub: "نفس إشارة 'أحبك' مع تأكيد بحركة أقوى", icon: "greeting" },
+      { word: "أراك لاحقاً", sub: "الإبهام والخنصر مفرودان (إشارة شاكا)", icon: "greeting" },
+      { word: "أضحكتني", sub: "إشارة تعبيرية سريعة من رسم توضيحي", icon: "greeting" },
+      { word: "سؤال", sub: "إصبع السبابة مرفوع مع طرفه مثني قليلاً", icon: "default" },
+      { word: "اقتباس", sub: "السبابة والوسطى مثنيتان كعلامتي تنصيص", icon: "default" },
+      { word: "هذا رهيب", sub: "إشارة تعبيرية سريعة من رسم توضيحي", icon: "greeting" },
+      { word: "أنا أراقبك", sub: "السبابة والخنصر مفرودتان تجاه العين", icon: "default" },
+      { word: "عمل جيد", sub: "إبهام اليد مرفوع للأعلى", icon: "greeting" },
+      { word: "أتمنى لك حياة سعيدة", sub: "أربع أصابع مفرودة مع حركة تعبيرية", icon: "greeting" },
+      { word: "أنت", sub: "إصبع السبابة يشير للأمام", icon: "default" },
+      { word: "هذا ممتاز", sub: "الأصابع مضمومة معاً وتُقبَّل بحركة رشيقة", icon: "greeting" },
+      { word: "لست متأكد", sub: "قبضة اليد تهتز أو تلتف قليلاً", icon: "default" },
+      { word: "أهلاً", sub: "اليد ترتفع مع تلويح خفيف للأمام والخلف", icon: "greeting" },
+      { word: "اسمي", sub: "قبضتا اليدين تتلامسان مع حركة للأعلى", icon: "greeting" },
+      { word: "من فضلك", sub: "السبابة تدور فوق الصدر بشكل دائري", icon: "greeting" },
+      { word: "ألم شديد", sub: "قبضتا اليدين تتلامسان بقوة أمام الجسم", icon: "health" },
+      { word: "المزيد", sub: "أطراف أصابع اليدين تتلامس معاً بشكل مثلث", icon: "default" },
+      { word: "حمام", sub: "اليد تهتز جانبياً بشكل الحرف W", icon: "default" },
+      { word: "يجب", sub: "السبابة تشير للأسفل بحزم", icon: "default" },
+      { word: "القرار", sub: "قبضة اليد تنزل على راحة اليد الأخرى", icon: "default" },
+      { word: "حكمة", sub: "أطراف الأصابع تلمس الجبهة ثم تتحرك للأعلى", icon: "default" },
+      { word: "جرأة", sub: "قبضة اليد تُوضع على الصدر بثبات", icon: "default" },
+      { word: "الكنيسة", sub: "أصابع اليدين المتشابكتين تُشكّلان سقفاً مدبّباً", icon: "place" },
+      { word: "خطير", sub: "اليد تتحرك للأسفل بحدة كتحذير", icon: "default" },
+      { word: "الموضوع", sub: "اليد تتحرك للأعلى بثبات مرتين", icon: "default" },
+      { word: "الشعب", sub: "اليدان تتحركان جانبياً معاً كإشارة لجماعة من الناس", icon: "default" },
+      { word: "حماية", sub: "اليدان تتقاطعان أمام الجسم بحركة جانبية", icon: "default" },
+      { word: "مسؤولية", sub: "اليد تربّت على الكتف مع حركة للأسفل", icon: "default" },
+      { word: "تستهينوا", sub: "اليد تتحرك بالقرب من الوجه كإشارة تحذير", icon: "default" },
+      { word: "جداً", sub: "الأصابع تنفرج بشكل واسع مع حركة للخارج", icon: "default" }
+    ]
+  };
+
+  const CUSTOM_DICT_KEY = 'vibeSignCustomDictionary';
+  const FAVORITES_KEY   = 'vibeSignFavorites';
+
+  let DICTIONARY = JSON.parse(JSON.stringify(DEFAULT_DICTIONARY));
+
+  function loadCustomDictionary(){
+    try {
+      const raw = localStorage.getItem(CUSTOM_DICT_KEY);
+      if (!raw) return;
+      const custom = JSON.parse(raw);
+      mergeDictionary(custom, false);
+    } catch (e){ console.warn('تعذّرت قراءة القاموس المخصّص المحفوظ:', e); }
+  }
+
+  function mergeDictionary(incoming, persist){
+    if (!incoming || typeof incoming !== 'object') return false;
+
+    // شكل مسطّح بسيط: { "كلمة": "وصف الإشارة" }
+    const looksFlat = Object.values(incoming).some(v => typeof v === 'string');
+    if (looksFlat){
+      const cat = "المستورد";
+      if (!DICTIONARY[cat]) DICTIONARY[cat] = [];
+      Object.keys(incoming).forEach(word => {
+        if (typeof incoming[word] === 'string'){
+          DICTIONARY[cat].push({ word: word, sub: incoming[word], icon: 'default' });
+        }
+      });
+    } else {
+      // شكل مصنّف: { "الفئة": [ {word, sub}, ... ] }
+      Object.keys(incoming).forEach(cat => {
+        if (!Array.isArray(incoming[cat])) return;
+        if (!DICTIONARY[cat]) DICTIONARY[cat] = [];
+        incoming[cat].forEach(entry => {
+          if (entry && entry.word){
+            DICTIONARY[cat].push({ word: entry.word, sub: entry.sub || '', icon: entry.icon || 'default' });
+          }
+        });
+      });
+    }
+
+    if (persist){
+      try { localStorage.setItem(CUSTOM_DICT_KEY, JSON.stringify(incoming)); } catch(e){}
+    }
+    return true;
+  }
+
+  function flattenDictionary(){
+    const flat = {};
+    Object.keys(DICTIONARY).forEach(cat => {
+      DICTIONARY[cat].forEach(entry => {
+        flat[normalizeWord(entry.word)] = entry;
+      });
+    });
+    return flat;
+  }
+
+  function normalizeWord(w){
+    return (w || '')
+      .trim()
+      .replace(/[\u064B-\u0652\u0670\u0640]/g, '') // تشكيل وتطويل
+      .replace(/[،.,!؟?]/g, '')
+      .replace(/[إأآا]/g, 'ا')
+      .replace(/ى/g, 'ي')
+      .replace(/ة/g, 'ه')
+      .toLowerCase();
+  }
+
+  // ---------- تفكيك السوابق واللواحق الشائعة لإيجاد جذر الكلمة ----------
+  function stripAffixes(word){
+    let w = word;
+    const prefixes = ['وبال','فبال','وال','فال','بال','كال','لل','ال','و','ف','ب','ك','ل','س'];
+    for (const p of prefixes){
+      if (w.length > p.length + 1 && w.startsWith(p)){
+        w = w.slice(p.length);
+        break;
+      }
+    }
+    const suffixes = ['كما','هما','كن','هن','هم','كم','نا','ني','ها','ه','ك','ي'];
+    for (const s of suffixes){
+      if (w.length > s.length + 1 && w.endsWith(s)){
+        w = w.slice(0, -s.length);
+        break;
+      }
+    }
+    return w;
+  }
+
+  // ---------- مسافة ليفنشتاين لإيجاد أقرب كلمة عند عدم التطابق ----------
+  function levenshtein(a, b){
+    const m = a.length, n = b.length;
+    if (!m) return n;
+    if (!n) return m;
+    const d = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) d[i][0] = i;
+    for (let j = 0; j <= n; j++) d[0][j] = j;
+    for (let i = 1; i <= m; i++){
+      for (let j = 1; j <= n; j++){
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        d[i][j] = Math.min(
+          d[i - 1][j] + 1,
+          d[i][j - 1] + 1,
+          d[i - 1][j - 1] + cost
+        );
+      }
+    }
+    return d[m][n];
+  }
+
+  // ---------- بحث ذكي: مطابقة تامة ← جذر ← تشابه جزئي ← أقرب كلمة (فَزّي) ----------
+  function findBestMatch(rawWord, flat){
+    const key = normalizeWord(rawWord);
+    if (!key) return null;
+
+    if (flat[key]) return { entry: flat[key], type: 'exact' };
+
+    const root = normalizeWord(stripAffixes(key));
+    if (root && root !== key && flat[root]) return { entry: flat[root], type: 'root' };
+
+    if (key.length >= 3){
+      const dictKeys = Object.keys(flat);
+      const substringKey = dictKeys.find(k => k.length >= 3 && (key.includes(k) || k.includes(key)));
+      if (substringKey) return { entry: flat[substringKey], type: 'similar' };
+
+      let best = null, bestDist = Infinity;
+      dictKeys.forEach(k => {
+        if (k.length < 2) return; // تجاهل الحروف المفردة في مرحلة البحث الفَزّي
+        const d = levenshtein(key, k);
+        const threshold = Math.max(1, Math.floor(k.length * 0.34));
+        if (d <= threshold && d < bestDist){ bestDist = d; best = k; }
+      });
+      if (best) return { entry: flat[best], type: 'fuzzy' };
+    }
+
+    return null;
+  }
+
+  // ---------- Flashcards guide rendering ----------
+  const catScroll = document.getElementById('catScroll');
+  const flashGrid = document.getElementById('flashGrid');
+  let activeCategory = null;
+
+  function renderCategoryTabs(){
+    const cats = Object.keys(DICTIONARY);
+    if (!activeCategory || !cats.includes(activeCategory)) activeCategory = cats[0];
+    catScroll.innerHTML = '';
+    cats.forEach(cat => {
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = 'cat-pill' + (cat === activeCategory ? ' active' : '');
+      pill.textContent = cat;
+      pill.addEventListener('click', () => {
+        activeCategory = cat;
+        renderCategoryTabs();
+        renderFlashcards();
+      });
+      catScroll.appendChild(pill);
+    });
+  }
+
+  function renderFlashcards(){
+    const entries = DICTIONARY[activeCategory] || [];
+    flashGrid.innerHTML = '';
+    if (!entries.length){
+      flashGrid.innerHTML = '<p class="t2s-empty">لا توجد كلمات في هذه الفئة بعد.</p>';
+      return;
+    }
+    entries.forEach(entry => {
+      const card = document.createElement('div');
+      card.className = 'flash-card';
+      card.innerHTML =
+        '<div class="flash-icon">' + (ICONS[entry.icon] || ICONS.default) + '</div>' +
+        '<div class="flash-word"></div>' +
+        '<div class="flash-sub"></div>';
+      card.querySelector('.flash-word').textContent = entry.word;
+      card.querySelector('.flash-sub').textContent = entry.sub || '';
+      flashGrid.appendChild(card);
+      attachTaughtMedia(card, entry.word);
+    });
+  }
+
+  // ---------- الإشارات اللي علّمها المستخدم للكاميرا: فئة "إشاراتي" + عرض وسائطها ----------
+  const TAUGHT_CAT = 'إشاراتي';
+
+  function syncTaughtCategory(){
+    const names = (window.signApp && window.signApp.getTaughtNames) ? window.signApp.getTaughtNames() : [];
+    if (names.length){
+      DICTIONARY[TAUGHT_CAT] = names.map(n => ({ word: n, sub: 'إشارة علّمتها للتطبيق', icon: 'default' }));
+    } else {
+      delete DICTIONARY[TAUGHT_CAT];
+    }
+  }
+
+  function attachTaughtMedia(card, word){
+    if (!window.signApp || !window.signApp.findSignMedia) return;
+    window.signApp.findSignMedia(word).then(m => {
+      if (!m || !card.isConnected) return;
+      let el;
+      if (m.kind === 'video'){
+        el = document.createElement('video');
+        el.src = m.url;
+        el.muted = true;
+        el.loop = true;
+        el.autoplay = true;
+        el.setAttribute('playsinline', '');
+      } else {
+        el = document.createElement('img');
+        el.src = m.url;
+        el.alt = word;
+      }
+      el.className = 'flash-media';
+      const icon = card.querySelector('.flash-icon');
+      if (icon) icon.style.display = 'none';
+      card.insertBefore(el, card.firstChild);
+      if (m.kind === 'video'){ const p = el.play(); if (p && p.catch) p.catch(() => {}); }
+    });
+  }
+
+  function refreshGuide(){
+    syncTaughtCategory();
+    renderCategoryTabs();
+    renderFlashcards();
+  }
+
+  document.addEventListener('vibesign:signs-changed', refreshGuide);
+
+  // ---------- Dictionary upload ----------
+  const uploadDictBtn    = document.getElementById('uploadDictBtn');
+  const dictFileInput    = document.getElementById('dictFileInput');
+  const resetDictBtn     = document.getElementById('resetDictBtn');
+  const dictUploadStatus = document.getElementById('dictUploadStatus');
+
+  uploadDictBtn.addEventListener('click', () => dictFileInput.click());
+
+  dictFileInput.addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(reader.result);
+        let addedGestures = 0;
+
+        // دمج إشارات يدوية إضافية لمحرّك الترجمة الحيّة إن وُجدت
+        if (parsed.gestures && typeof parsed.gestures === 'object'){
+          Object.keys(parsed.gestures).forEach(key => {
+            const g = parsed.gestures[key];
+            if (g && g.label){
+              window.signApp && window.signApp.addGesture && window.signApp.addGesture(key, g);
+              addedGestures++;
+            }
+          });
+        }
+
+        const dictPart = parsed.dictionary || parsed;
+        mergeDictionary(dictPart, true);
+        refreshGuide();
+
+        dictUploadStatus.textContent =
+          'تم استيراد القاموس بنجاح' + (addedGestures ? (' — وإضافة ' + addedGestures + ' إشارة جديدة لمحرّك الكاميرا.') : '.') ;
+      } catch (err){
+        console.error(err);
+        dictUploadStatus.textContent = 'تعذّر قراءة الملف — تأكد أنه بصيغة JSON صحيحة.';
+      }
+    };
+    reader.readAsText(file, 'utf-8');
+    dictFileInput.value = '';
+  });
+
+  resetDictBtn.addEventListener('click', () => {
+    localStorage.removeItem(CUSTOM_DICT_KEY);
+    DICTIONARY = JSON.parse(JSON.stringify(DEFAULT_DICTIONARY));
+    refreshGuide();
+    dictUploadStatus.textContent = 'تمت إعادة القاموس إلى الوضع الافتراضي.';
+  });
+
+  // ---------- Quick favorites ----------
+  const favInput   = document.getElementById('favInput');
+  const favAddBtn  = document.getElementById('favAddBtn');
+  const favList    = document.getElementById('favList');
+
+  function loadFavorites(){
+    try {
+      return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+    } catch(e){ return []; }
+  }
+
+  function saveFavorites(list){
+    try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(list)); } catch(e){}
+  }
+
+  function renderFavorites(){
+    const favs = loadFavorites();
+    favList.innerHTML = '';
+    if (!favs.length){
+      favList.innerHTML = '<p class="fav-empty">لا توجد عبارات محفوظة بعد — أضف عبارتك الأولى أعلاه.</p>';
+      return;
+    }
+    favs.forEach((text, idx) => {
+      const item = document.createElement('div');
+      item.className = 'fav-item';
+      item.innerHTML =
+        '<button class="fav-tap" type="button"></button>' +
+        '<button class="fav-remove" type="button"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>';
+      item.querySelector('.fav-tap').textContent = text;
+      item.querySelector('.fav-tap').addEventListener('click', () => showBigOverlay(text));
+      item.querySelector('.fav-remove').addEventListener('click', () => {
+        const list = loadFavorites();
+        list.splice(idx, 1);
+        saveFavorites(list);
+        renderFavorites();
+      });
+      favList.appendChild(item);
+    });
+  }
+
+  favAddBtn.addEventListener('click', () => {
+    const text = favInput.value.trim();
+    if (!text) return;
+    const list = loadFavorites();
+    list.unshift(text);
+    saveFavorites(list);
+    favInput.value = '';
+    renderFavorites();
+  });
+  favInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') favAddBtn.click();
+  });
+
+  // ---------- Emergency big-display overlay ----------
+  const bigOverlay      = document.getElementById('bigOverlay');
+  const bigOverlayText  = document.getElementById('bigOverlayText');
+  const bigOverlayClose = document.getElementById('bigOverlayClose');
+  const bigOverlaySpeak = document.getElementById('bigOverlaySpeak');
+
+  function showBigOverlay(text){
+    bigOverlayText.textContent = text;
+    bigOverlay.classList.add('active');
+  }
+  bigOverlayClose.addEventListener('click', () => bigOverlay.classList.remove('active'));
+  bigOverlaySpeak.addEventListener('click', () => {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(bigOverlayText.textContent);
+    utter.lang = 'ar-SA';
+    const voices = window.speechSynthesis.getVoices();
+    const arabicVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ar'));
+    if (arabicVoice) utter.voice = arabicVoice;
+    window.speechSynthesis.speak(utter);
+  });
+
+  // ---------- Text to sign ----------
+  const t2sInput      = document.getElementById('t2sInput');
+  const t2sConvertBtn = document.getElementById('t2sConvertBtn');
+  const t2sResults    = document.getElementById('t2sResults');
+
+  const MATCH_TYPE_LABELS = {
+    root: 'الجذر',
+    similar: 'مشابهة',
+    fuzzy: 'الأقرب'
+  };
+
+  function buildLetterBreakdown(word, flat){
+    const letters = word.replace(/[\u064B-\u0652\u0670\u0640\s]/g, '').split('');
+    const wrap = document.createElement('div');
+    wrap.className = 'flash-card t2s-chip t2s-letter-group';
+
+    const title = document.createElement('div');
+    title.className = 't2s-chip-word';
+    title.textContent = word;
+    wrap.appendChild(title);
+
+    const note = document.createElement('div');
+    note.className = 't2s-chip-sub';
+    note.textContent = 'غير موجودة ككلمة كاملة — معروضة حرفاً بحرف (تهجئة إصبعية):';
+    wrap.appendChild(note);
+
+    const row = document.createElement('div');
+    row.className = 't2s-letters-row';
+    letters.forEach(ch => {
+      const lkey = normalizeWord(ch);
+      const lentry = flat[lkey];
+      const mini = document.createElement('div');
+      mini.className = 't2s-letter-mini' + (lentry ? '' : ' unknown');
+      mini.innerHTML = '<span class="t2s-letter-char"></span><span class="t2s-letter-tip"></span>';
+      mini.querySelector('.t2s-letter-char').textContent = ch;
+      mini.querySelector('.t2s-letter-tip').textContent = lentry ? 'متاحة' : '؟';
+      row.appendChild(mini);
+    });
+    wrap.appendChild(row);
+    return wrap;
+  }
+
+  function convertTextToSigns(){
+    const raw = t2sInput.value.trim();
+    if (!raw){
+      t2sResults.innerHTML = '<p class="t2s-empty">اكتب جملة واضغط "تحويل" لعرض الإشارات المطابقة.</p>';
+      return;
+    }
+    const flat = flattenDictionary();
+    const wordsArr = raw.split(/\s+/).filter(Boolean);
+    t2sResults.innerHTML = '';
+
+    wordsArr.forEach(word => {
+      const result = findBestMatch(word, flat);
+
+      if (!result){
+        t2sResults.appendChild(buildLetterBreakdown(word, flat));
+        return;
+      }
+
+      const match = result.entry;
+      const chip = document.createElement('div');
+      chip.className = 'flash-card t2s-chip';
+      chip.innerHTML =
+        '<div class="flash-icon">' + (ICONS[match.icon] || ICONS.default) + '</div>' +
+        '<div class="flash-word t2s-chip-word"></div>' +
+        '<div class="flash-sub t2s-chip-sub"></div>';
+      chip.querySelector('.t2s-chip-word').textContent = word;
+
+      let subText = match.sub || 'إشارة معروفة';
+      if (result.type !== 'exact'){
+        subText += ' (' + MATCH_TYPE_LABELS[result.type] + ': "' + match.word + '")';
+      }
+      chip.querySelector('.t2s-chip-sub').textContent = subText;
+      t2sResults.appendChild(chip);
+      attachTaughtMedia(chip, match.word);
+    });
+  }
+
+  t2sConvertBtn.addEventListener('click', convertTextToSigns);
+  t2sInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') convertTextToSigns();
+  });
+
+  // ---------- Init ----------
+  loadCustomDictionary();
+  refreshGuide();
+  renderFavorites();
+
+})();
+</script>
+
+<!-- ========================================================= -->
+<!-- تكامل Firebase / Firestore لحفظ الجمل المُترجمة             -->
+<!-- ========================================================= -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp,
+    query,
+    orderBy,
+    limit,
+    onSnapshot,
+    doc,
+    setDoc,
+    deleteDoc
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCcnWF2SSlUDhPlXeGGhzgA-b3PbtpPUAc",
+    authDomain: "sign-language-translator-c1099.firebaseapp.com",
+    projectId: "sign-language-translator-c1099",
+    storageBucket: "sign-language-translator-c1099.firebasestorage.app",
+    messagingSenderId: "68657246272",
+    appId: "1:68657246272:web:721ec57b8df9aaddb6efa5",
+    measurementId: "G-F2JRMW8NMH"
+  };
+
+  const fbStatusDot  = document.getElementById('fbStatusDot');
+  const fbStatusText = document.getElementById('fbStatusText');
+  const fbHistoryEl  = document.getElementById('fbHistory');
+  const saveBtn      = document.getElementById('saveFirebaseBtn');
+
+  function setStatus(state, text){
+    fbStatusText.textContent = text;
+    fbStatusDot.className = 'status-dot' + (state === 'ok' ? ' on' : state === 'error' ? ' warn' : '');
+  }
+
+  let db = null;
+
+  try {
+    const app = initializeApp(firebaseConfig);
+
+    // Analytics قد لا يعمل عند فتح الملف كملف محلي (file://) أو بلا اتصال إنترنت،
+    // لذا نعزله في try/catch مستقل حتى لا يوقف باقي التطبيق.
+    try { getAnalytics(app); } catch (e) { console.warn('Analytics غير مُفعّل:', e); }
+
+    db = getFirestore(app);
+    setStatus('ok', 'متصل بقاعدة بيانات Firestore');
+    listenToHistory();
+    startSignSync();
+
+  } catch (err){
+    console.error('فشل تهيئة Firebase:', err);
+    setStatus('error', 'تعذّر الاتصال بـ Firebase — تحقق من الإعدادات والاتصال بالإنترنت');
+    saveBtn.disabled = true;
+  }
+
+  // ---------- حفظ الجملة الحالية ----------
+  async function saveCurrentSentence(){
+    if (!db) return;
+
+    const text = (window.signApp && window.signApp.getSentenceText()) || '';
+    if (!text.trim()){
+      setStatus('warn', 'لا توجد جملة لحفظها بعد — أضف كلمات أولاً');
+      return;
+    }
+
+    saveBtn.disabled = true;
+    const originalLabel = saveBtn.innerHTML;
+    saveBtn.textContent = 'جارٍ الحفظ…';
+
+    try {
+      await addDoc(collection(db, 'translated_sentences'), {
+        text: text,
+        words: window.signApp.getWords(),
+        createdAt: serverTimestamp()
+      });
+      setStatus('ok', '✓ تم حفظ الجملة في Firestore');
+    } catch (err){
+      console.error('فشل حفظ الجملة:', err);
+      setStatus('error', 'تعذّر الحفظ — راجع قواعد أمان Firestore (Security Rules)');
+    } finally {
+      saveBtn.disabled = false;
+      saveBtn.innerHTML = originalLabel;
+    }
+  }
+
+  saveBtn.addEventListener('click', saveCurrentSentence);
+
+  // ---------- الاستماع الحي لآخر الجمل المحفوظة ----------
+  function listenToHistory(){
+    try {
+      const q = query(
+        collection(db, 'translated_sentences'),
+        orderBy('createdAt', 'desc'),
+        limit(8)
+      );
+
+      onSnapshot(q, (snapshot) => {
+        if (snapshot.empty){
+          fbHistoryEl.innerHTML = '<p class="fb-empty">لا توجد جمل محفوظة بعد.</p>';
+          return;
+        }
+
+        fbHistoryEl.innerHTML = '';
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          const time = data.createdAt && data.createdAt.toDate
+            ? data.createdAt.toDate().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' })
+            : '—';
+
+          const item = document.createElement('div');
+          item.className = 'fb-item';
+          item.innerHTML =
+            '<span class="fb-item-text"></span>' +
+            '<span class="fb-item-time"></span>';
+          item.querySelector('.fb-item-text').textContent = data.text || '';
+          item.querySelector('.fb-item-time').textContent = time;
+          fbHistoryEl.appendChild(item);
+        });
+      }, (err) => {
+        console.error('فشل الاستماع لسجل Firestore:', err);
+        setStatus('error', 'تعذّرت قراءة السجل — تحقق من قواعد الأمان');
+      });
+
+    } catch (err){
+      console.error(err);
+    }
+  }
+  // ============ مزامنة الإشارات المخصّصة مع Firestore (collection: custom_signs) ============
+  // كل إشارة = document واحد (الاسم + اللغة + البصمات + صورة مصغّرة اختيارية).
+  // أي تغيير محلي (تسجيل/تعديل/حذف) بيترفع تلقائياً، وأي تغيير من أي جهاز تاني بينزل فوراً
+  // ويتضاف لمصفوفة التعرّف الحيّة بدون إعادة تحميل الصفحة.
+  const signSyncStatus = document.getElementById('signSyncStatus');
+  const syncMsg = (t) => { if (signSyncStatus) signSyncStatus.textContent = t; };
+  const sigOf = (u, l, n, m) => [u || 0, l || '', n, m || ''].join('|');
+  const signDocId = (n) => 'sign_' + encodeURIComponent(n).replace(/\./g, '%2E');
+  const pushed = new Map();     // اسم الإشارة => توقيع النسخة المعروف إنها على السيرفر
+  let syncReady = false, pushTimer = null, pushing = false;
+
+  function schedulePush(ms){
+    if (!syncReady) return;
+    clearTimeout(pushTimer);
+    pushTimer = setTimeout(pushDiff, ms === undefined ? 400 : ms);
+  }
+
+  async function pushDiff(){
+    if (!db || !syncReady || pushing || !window.signApp) return;
+    pushing = true;
+    let failed = false;
+    try {
+      const local = window.signApp.getSyncSigns();
+      for (const name of Object.keys(local)){
+        const g = local[name];
+        const sig = sigOf(g.updated, g.lang, g.samples.length, g.media);
+        if (pushed.get(name) === sig) continue;
+        try {
+          syncMsg('☁️ جارٍ حفظ "' + name + '" في قاعدة البيانات…');
+          const thumb = g.media === 'image' ? await window.signApp.getSignThumb(name) : null;
+          await setDoc(doc(db, 'custom_signs', signDocId(name)), {
+            name: name, lang: g.lang, updated: g.updated,
+            media: thumb ? 'image' : null, thumb: thumb || null,
+            samples: g.samples.map(v => v.join(',')),   // Firestore ما بيقبلش مصفوفات متداخلة
+            savedAt: serverTimestamp()
+          });
+          pushed.set(name, sig);
+        } catch (err){ failed = true; console.error('فشل رفع الإشارة', name, err); }
+      }
+      for (const name of Array.from(pushed.keys())){
+        if (local[name]) continue;
+        try { await deleteDoc(doc(db, 'custom_signs', signDocId(name))); pushed.delete(name); }
+        catch (err){ failed = true; console.error('فشل حذف الإشارة', name, err); }
+      }
+      const total = Object.keys(local).length;
+      syncMsg(failed ? '⚠️ تعذّر الحفظ في القاعدة — راجع قواعد الأمان (Rules) والاتصال؛ الإشارات محفوظة على الجهاز وهتترفع تلقائياً.'
+                     : '☁️ ' + total + ' إشارة محفوظة في قاعدة البيانات ومتزامنة مع كل الأجهزة.');
+    } finally {
+      pushing = false;
+      if (failed) schedulePush(15000);
+    }
+  }
+
+  function startSignSync(){
+    document.addEventListener('vibesign:signs-changed', () => schedulePush(400));
+    window.addEventListener('online', () => schedulePush(200));
+    onSnapshot(collection(db, 'custom_signs'), async (snap) => {
+      for (const ch of snap.docChanges()){
+        const d = ch.doc.data();
+        const name = d && d.name;
+        if (!name) continue;
+        if (ch.type === 'removed'){
+          if (pushed.has(name)){ pushed.delete(name); await window.signApp.removeLocal(name); }
+          continue;
+        }
+        if (ch.doc.metadata.hasPendingWrites) continue;     // ده صدى لكتابتنا إحنا
+        await window.signApp.applyRemote(name, d);
+        const l = window.signApp.getSyncSigns()[name];
+        if (l && l.updated === (d.updated || 0)) pushed.set(name, sigOf(d.updated, d.lang, (d.samples || []).length, d.media));
+      }
+      if (!snap.metadata.fromCache && !syncReady){ syncReady = true; }
+      if (syncReady) schedulePush(200);
+      else syncMsg('📴 غير متصل — الإشارات محفوظة على الجهاز وهتترفع أول ما الاتصال يرجع.');
+    }, (err) => {
+      console.error('فشل مزامنة الإشارات:', err);
+      syncMsg('⚠️ تعذّر الاتصال بقاعدة الإشارات — أضف قاعدة Firestore للـ collection "custom_signs" (شوف الملاحظات). الإشارات محفوظة على الجهاز.');
+    });
+  }
+</script>
+
+</body>
+</html>
